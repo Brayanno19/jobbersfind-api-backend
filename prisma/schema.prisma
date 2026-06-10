@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// ADMINS
+// ---------------------------------------------------------------------------
+model Admin {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      String   @default("SUPER_ADMIN") // SUPER_ADMIN, MODERATOR
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// CLIENTS
+// ---------------------------------------------------------------------------
+model ClientUser {
+  id          String   @id @default(uuid())
+  email       String?  @unique
+  phoneNumber String   @unique
+  password    String
+  firstName   String
+  lastName    String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// ARTISANS
+// ---------------------------------------------------------------------------
+model ArtisanUser {
+  id              String   @id @default(uuid())
+  email           String?  @unique
+  phoneNumber     String   @unique
+  password        String
+  firstName       String
+  lastName        String?
+  companyName     String?
+  isVerified      Boolean  @default(false)
+  isActive        Boolean  @default(true)
+  
+  // Géolocalisation de base (PostGIS sera ajouté pour la recherche spatiale)
+  latitude        Float?
+  longitude       Float?
+  city            String?
+  neighborhood    String?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
