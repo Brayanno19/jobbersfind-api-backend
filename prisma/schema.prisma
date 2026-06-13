@@ -30,6 +30,18 @@ model ClientUser {
   firstName   String
   lastName    String?
   isActive    Boolean  @default(true)
+  
+  // Géolocalisation
+  latitude     Float?
+  longitude    Float?
+  city         String?
+  neighborhood String?
+
+  // Relations
+  reviews      Review[]
+
+  fcmToken     String?
+
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
@@ -45,15 +57,151 @@ model ArtisanUser {
   firstName       String
   lastName        String?
   companyName     String?
+  nationality     String?
   isVerified      Boolean  @default(false)
   isActive        Boolean  @default(true)
   
-  // Géolocalisation de base (PostGIS sera ajouté pour la recherche spatiale)
+  // Algorithme de recherche et crédibilité
+  credibilityScore Float   @default(500.0) // Score en arrière-plan
+  averageRating    Float   @default(0.0)   // Étoiles de 0 à 5
+  
+  // Géolocalisation (PostGIS plus tard)
   latitude        Float?
   longitude       Float?
   city            String?
   neighborhood    String?
 
+  // Relations
+  domains         JobDomain[]
+  documents       ArtisanDocument[]
+  videos          ArtisanVideo[]
+  reviews         Review[]
+  posts           Post[]
+
+  fcmToken        String?
+
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// DOMAINES D'ACTIVITÉ (MÉTIERS)
+// ---------------------------------------------------------------------------
+model JobDomain {
+  id          String   @id @default(uuid())
+  name        String   @unique // ex: Plombier, Électricien
+  description String?
+  isActive    Boolean  @default(true)
+  
+  // L'artisan peut choisir jusqu'à 3 métiers
+  artisans    ArtisanUser[]
+  // Mots-clés NLP associés à ce métier
+  keywords    SearchKeyword[]
+}
+
+// ---------------------------------------------------------------------------
+// DICTIONNAIRE NLP (Mots-clés de recherche)
+// ---------------------------------------------------------------------------
+model SearchKeyword {
+  id          String   @id @default(uuid())
+  word        String   @unique // Mot ou expression, ex: "fuite", "kaba", "bendskin"
+  weight      Int      @default(1) // Poids d'importance (ex: 5 pour un mot clé très fort)
+  domainId    String
+  
+  domain      JobDomain @relation(fields: [domainId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// DOCUMENTS ARTISAN (Pièces d'identité, Diplômes)
+// ---------------------------------------------------------------------------
+model ArtisanDocument {
+  id            String   @id @default(uuid())
+  artisanId     String
+  type          String   // ID_CARD, PASSPORT, DIPLOMA, CERTIFICATE
+  url           String   // Lien Cloudinary
+  status        String   @default("PENDING") // PENDING, VALIDATED, REJECTED
+  uploadedAt    DateTime @default(now())
+
+  artisan       ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+}
+
+// ---------------------------------------------------------------------------
+// VIDÉOS ARTISAN
+// ---------------------------------------------------------------------------
+model ArtisanVideo {
+  id            String   @id @default(uuid())
+  artisanId     String
+  type          String   // PRESENTATION, PORTFOLIO
+  url           String   // Lien Cloudinary
+  uploadedAt    DateTime @default(now())
+
+  artisan       ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+}
+
+// ---------------------------------------------------------------------------
+// AVIS ET NOTATIONS (Reviews)
+// ---------------------------------------------------------------------------
+model Review {
+  id          String   @id @default(uuid())
+  rating      Int      // 1 à 5
+  comment     String?
+  
+  clientId    String
+  artisanId   String
+  
+  client      ClientUser  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  artisan     ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([clientId, artisanId]) // Un client ne peut laisser qu'un seul avis par artisan
+}
+
+// ---------------------------------------------------------------------------
+// SIGNALEMENTS (Reports)
+// ---------------------------------------------------------------------------
+model Report {
+  id           String   @id @default(uuid())
+  reporterId   String
+  reporterRole String   // CLIENT, ARTISAN
+  reportedId   String
+  reportedRole String   // CLIENT, ARTISAN
+  type         String   // FAKE_PROFILE, FRAUD, BAD_SERVICE, OTHER
+  description  String
+  status       String   @default("PENDING") // PENDING, RESOLVED, DISMISSED
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// NOTIFICATIONS (History)
+// ---------------------------------------------------------------------------
+model Notification {
+  id           String   @id @default(uuid())
+  userId       String
+  userRole     String   // CLIENT, ARTISAN
+  title        String
+  body         String
+  isRead       Boolean  @default(false)
+  
+  createdAt    DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// PUBLICATIONS (Posts - Réseau Social Léger)
+// ---------------------------------------------------------------------------
+model Post {
+  id           String   @id @default(uuid())
+  artisanId    String
+  content      String   @db.Text
+  mediaUrl     String?  // Lien Cloudinary
+  mediaType    String?  // IMAGE, VIDEO
+  
+  artisan      ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

@@ -45,6 +45,15 @@ export class AuthArtisanService {
         phoneNumber: dto.phoneNumber,
         email: dto.email,
         password: hashedPassword,
+        nationality: dto.nationality,
+        city: dto.city,
+        neighborhood: dto.neighborhood,
+        latitude: dto.latitude,
+        longitude: dto.longitude,
+        // Liaison optionnelle avec les métiers (Domaines) lors de l'inscription complète
+        domains: dto.domainIds && dto.domainIds.length > 0 ? {
+          connect: dto.domainIds.map(id => ({ id }))
+        } : undefined,
       },
     });
 

@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength, IsNumber } from 'class-validator';
 
 /**
  * DTO pour l'inscription d'un Client
@@ -24,4 +24,21 @@ export class RegisterClientDto {
   @IsString()
   @MinLength(6, { message: 'Le mot de passe doit contenir au moins 6 caractères' })
   password: string;
+
+  // --- Champs Optionnels de Géolocalisation ---
+  @IsOptional()
+  @IsString()
+  city?: string;
+
+  @IsOptional()
+  @IsString()
+  neighborhood?: string;
+
+  @IsOptional()
+  @IsNumber()
+  latitude?: number;
+
+  @IsOptional()
+  @IsNumber()
+  longitude?: number;
 }

@@ -50,6 +50,10 @@ export class AuthClientService {
         phoneNumber: dto.phoneNumber,
         email: dto.email,
         password: hashedPassword,
+        city: dto.city,
+        neighborhood: dto.neighborhood,
+        latitude: dto.latitude,
+        longitude: dto.longitude,
       },
     });
 

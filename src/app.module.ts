@@ -4,6 +4,17 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { PrismaModule } from './common/prisma.module';
+import { ClientsModule } from './clients/clients.module';
+import { ArtisansModule } from './artisans/artisans.module';
+import { CategoriesModule } from './categories/categories.module';
+import { UploadsModule } from './uploads/uploads.module';
+import { VerificationModule } from './verification/verification.module';
+import { SearchModule } from './search/search.module';
+import { ReviewsModule } from './reviews/reviews.module';
+import { ReportsModule } from './reports/reports.module';
+import { NotificationsModule } from './notifications/notifications.module';
+import { PostsModule } from './posts/posts.module';
+import { AdminsModule } from './admins/admins.module';
 
 @Module({
   imports: [
@@ -12,6 +23,17 @@ import { PrismaModule } from './common/prisma.module';
     }),
     AuthModule,
     PrismaModule,
+    ClientsModule,
+    ArtisansModule,
+    CategoriesModule,
+    UploadsModule,
+    VerificationModule,
+    SearchModule,
+    ReviewsModule,
+    ReportsModule,
+    NotificationsModule,
+    PostsModule,
+    AdminsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
