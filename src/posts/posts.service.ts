@@ -64,6 +64,45 @@ export class PostsService {
     };
   }
 
+  async getGlobalFeed(page = 1, limit = 10) {
+    const skip = (page - 1) * limit;
+    
+    const [posts, total] = await Promise.all([
+      this.prisma.post.findMany({
+        orderBy: { createdAt: 'desc' },
+        skip,
+        take: limit,
+        include: {
+          artisan: {
+            select: {
+              id: true,
+              firstName: true,
+              lastName: true,
+              companyName: true,
+              avatarUrl: true,
+              domains: {
+                select: {
+                  name: true,
+                },
+              },
+            },
+          },
+        },
+      }),
+      this.prisma.post.count(),
+    ]);
+
+    return {
+      data: posts,
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      },
+    };
+  }
+
   async getPostById(id: string) {
     const post = await this.prisma.post.findUnique({ where: { id } });
     if (!post) throw new NotFoundException('Post non trouvé');

@@ -4,6 +4,9 @@ import { TokenService } from './token.service';
 import { MailService } from '../../common/mail.service';
 import { RegisterClientDto } from '../dto/register-client.dto';
 import { LoginDto } from '../dto/login.dto';
+import { VerifyOtpDto, ResendOtpDto } from '../dto/verify-otp.dto';
+import { ForgotPasswordDto } from '../dto/forgot-password.dto';
+import { ResetPasswordDto } from '../dto/reset-password.dto';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -61,18 +64,23 @@ export class AuthClientService {
 
     // 4. Générer un OTP (ex: 6 chiffres aléatoires)
     const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
+
+    // Mettre à jour l'utilisateur avec l'OTP
+    await this.prisma.clientUser.update({
+      where: { id: newClient.id },
+      data: { otpCode, otpExpiresAt },
+    });
 
     // 5. Envoyer l'OTP via Brevo + Console
     // La cible prioritaire est le téléphone s'il gère les SMS, sinon l'email (ici on passe le tel ou email)
     const otpTarget = dto.email ? dto.email : dto.phoneNumber;
     await this.mailService.sendOtp(otpTarget, otpCode);
 
-    // 6. Générer les tokens (connexion automatique après inscription)
-    const tokens = await this.tokenService.generateTokens(newClient.id, 'CLIENT');
-
+    // On ne génère plus les tokens ici, car le téléphone n'est pas vérifié.
     return {
       message: 'Inscription réussie, veuillez vérifier votre code OTP',
-      tokens,
+      requireOtp: true,
       user: {
         id: newClient.id,
         firstName: newClient.firstName,
@@ -111,6 +119,11 @@ export class AuthClientService {
       throw new UnauthorizedException('Ce compte a été suspendu par l\'administration');
     }
 
+    // NOUVEAU: Bloquer si le téléphone n'est pas vérifié
+    if (!client.isPhoneVerified) {
+      throw new UnauthorizedException('OTP_REQUIRED');
+    }
+
     // 4. Générer les tokens JWT avec le rôle strict
     const tokens = await this.tokenService.generateTokens(client.id, 'CLIENT');
 
@@ -123,5 +136,155 @@ export class AuthClientService {
         lastName: client.lastName,
       }
     };
+  }
+
+  /**
+   * Vérification de l'OTP
+   */
+  async verifyOtp(dto: VerifyOtpDto) {
+    const client = await this.prisma.clientUser.findFirst({
+      where: {
+        OR: [
+          { phoneNumber: dto.identifier },
+          { email: dto.identifier },
+        ],
+      },
+    });
+
+    if (!client) {
+      throw new UnauthorizedException('Utilisateur introuvable');
+    }
+
+    if (client.isPhoneVerified) {
+      throw new ConflictException('Ce compte est déjà vérifié');
+    }
+
+    if (client.otpCode !== dto.otp || !client.otpExpiresAt || client.otpExpiresAt < new Date()) {
+      throw new UnauthorizedException('Code OTP invalide ou expiré');
+    }
+
+    // Valider le compte et nettoyer l'OTP
+    const updatedClient = await this.prisma.clientUser.update({
+      where: { id: client.id },
+      data: {
+        isPhoneVerified: true,
+        otpCode: null,
+        otpExpiresAt: null,
+      },
+    });
+
+    // Générer les tokens maintenant que le compte est vérifié
+    const tokens = await this.tokenService.generateTokens(updatedClient.id, 'CLIENT');
+
+    return {
+      message: 'Compte vérifié avec succès',
+      tokens,
+      user: {
+        id: updatedClient.id,
+        firstName: updatedClient.firstName,
+        lastName: updatedClient.lastName,
+      }
+    };
+  }
+
+  /**
+   * Renvoi de l'OTP
+   */
+  async resendOtp(dto: ResendOtpDto) {
+    const client = await this.prisma.clientUser.findFirst({
+      where: {
+        OR: [
+          { phoneNumber: dto.identifier },
+          { email: dto.identifier },
+        ],
+      },
+    });
+
+    if (!client) {
+      throw new UnauthorizedException('Utilisateur introuvable');
+    }
+
+    if (client.isPhoneVerified) {
+      throw new ConflictException('Ce compte est déjà vérifié');
+    }
+
+    const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000);
+
+    await this.prisma.clientUser.update({
+      where: { id: client.id },
+      data: { otpCode, otpExpiresAt },
+    });
+
+    const otpTarget = client.email ? client.email : client.phoneNumber;
+    await this.mailService.sendOtp(otpTarget, otpCode);
+
+    return { message: 'Nouveau code envoyé avec succès' };
+  }
+  /**
+   * Demande de réinitialisation de mot de passe
+   */
+  async forgotPassword(dto: ForgotPasswordDto) {
+    const client = await this.prisma.clientUser.findFirst({
+      where: {
+        OR: [
+          { phoneNumber: dto.identifier },
+          { email: dto.identifier },
+        ],
+      },
+    });
+
+    if (!client) {
+      // Pour des raisons de sécurité, on ne précise pas si l'utilisateur existe ou non
+      return { message: 'Si un compte existe avec cet identifiant, un OTP a été envoyé.' };
+    }
+
+    const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000);
+
+    await this.prisma.clientUser.update({
+      where: { id: client.id },
+      data: { otpCode, otpExpiresAt },
+    });
+
+    const otpTarget = client.email ? client.email : client.phoneNumber;
+    await this.mailService.sendOtp(otpTarget, otpCode);
+
+    return { message: 'Si un compte existe avec cet identifiant, un OTP a été envoyé.' };
+  }
+
+  /**
+   * Réinitialisation effective du mot de passe
+   */
+  async resetPassword(dto: ResetPasswordDto) {
+    const client = await this.prisma.clientUser.findFirst({
+      where: {
+        OR: [
+          { phoneNumber: dto.identifier },
+          { email: dto.identifier },
+        ],
+      },
+    });
+
+    if (!client) {
+      throw new UnauthorizedException('Utilisateur introuvable ou OTP invalide');
+    }
+
+    if (client.otpCode !== dto.otp || !client.otpExpiresAt || client.otpExpiresAt < new Date()) {
+      throw new UnauthorizedException('Code OTP invalide ou expiré');
+    }
+
+    const hashedPassword = await bcrypt.hash(dto.newPassword, 10);
+
+    await this.prisma.clientUser.update({
+      where: { id: client.id },
+      data: {
+        password: hashedPassword,
+        otpCode: null,
+        otpExpiresAt: null,
+      },
+    });
+
+    return { message: 'Mot de passe réinitialisé avec succès' };
   }
 }

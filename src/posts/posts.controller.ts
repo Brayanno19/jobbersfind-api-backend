@@ -20,6 +20,15 @@ export class PostsController {
     return this.postsService.createPost(req.user.userId, createPostDto, file);
   }
 
+  @Get()
+  @UseGuards(JwtAuthGuard)
+  getGlobalFeed(
+    @Query('page') page: string = '1',
+    @Query('limit') limit: string = '10',
+  ) {
+    return this.postsService.getGlobalFeed(+page, +limit);
+  }
+
   @Get('artisan/:artisanId')
   getFeed(
     @Param('artisanId') artisanId: string,

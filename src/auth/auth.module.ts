@@ -10,6 +10,7 @@ import { AuthClientService } from './services/auth-client.service';
 import { AuthArtisanService } from './services/auth-artisan.service';
 import { AuthAdminService } from './services/auth-admin.service';
 import { TokenService } from './services/token.service';
+import { JwtStrategy } from './strategies/jwt.strategy';
 
 import { PrismaModule } from '../common/prisma.module';
 import { MailModule } from '../common/mail.module';
@@ -36,6 +37,7 @@ import { MailModule } from '../common/mail.module';
     AuthArtisanService,
     AuthAdminService,
     TokenService,
+    JwtStrategy,
   ],
 })
 export class AuthModule {}

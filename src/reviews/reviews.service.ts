@@ -91,7 +91,7 @@ export class ReviewsService {
       where: { artisanId },
       include: {
         client: {
-          select: { id: true, firstName: true, lastName: true }
+          select: { id: true, firstName: true, lastName: true, avatarUrl: true }
         }
       },
       orderBy: { createdAt: 'desc' }

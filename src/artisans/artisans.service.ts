@@ -17,6 +17,8 @@ export class ArtisansService {
         domains: true,
         documents: true,
         videos: true,
+        services: true,
+        portfolio: true,
       }
     });
 
@@ -38,8 +40,8 @@ export class ArtisansService {
 
     // Remplacement des domaines existants
     if (domainIds) {
-      if (domainIds.length > 3) {
-        throw new BadRequestException('Un artisan ne peut avoir que 3 métiers maximum.');
+      if (domainIds.length > 4) {
+        throw new BadRequestException('Un artisan ne peut avoir que 4 métiers maximum.');
       }
       updateData.domains = {
         set: domainIds.map(id => ({ id })) 
@@ -97,5 +99,78 @@ export class ArtisansService {
         url,
       }
     });
+  }
+  /**
+   * Mettre à jour l'avatar (URL Cloudinary) de l'artisan
+   */
+  async uploadAvatar(userId: string, avatarUrl: string) {
+    return this.prisma.artisanUser.update({
+      where: { id: userId },
+      data: { avatarUrl },
+      select: { id: true, avatarUrl: true },
+    });
+  }
+
+  // =========================================================================
+  // SERVICES (Prestations de l'artisan)
+  // =========================================================================
+  
+  async addService(userId: string, data: { title: string; description?: string; price?: number }) {
+    return this.prisma.artisanService.create({
+      data: {
+        artisanId: userId,
+        title: data.title,
+        description: data.description,
+        price: data.price ? Number(data.price) : null,
+      }
+    });
+  }
+
+  async updateService(userId: string, serviceId: string, data: { title?: string; description?: string; price?: number }) {
+    // Vérifier que le service appartient bien à l'artisan
+    const service = await this.prisma.artisanService.findUnique({ where: { id: serviceId }});
+    if (!service || service.artisanId !== userId) {
+      throw new NotFoundException('Service introuvable ou accès refusé');
+    }
+
+    return this.prisma.artisanService.update({
+      where: { id: serviceId },
+      data: {
+        title: data.title,
+        description: data.description,
+        price: data.price !== undefined ? (data.price ? Number(data.price) : null) : undefined,
+      }
+    });
+  }
+
+  async deleteService(userId: string, serviceId: string) {
+    const service = await this.prisma.artisanService.findUnique({ where: { id: serviceId }});
+    if (!service || service.artisanId !== userId) {
+      throw new NotFoundException('Service introuvable ou accès refusé');
+    }
+    return this.prisma.artisanService.delete({ where: { id: serviceId }});
+  }
+
+  // =========================================================================
+  // PORTFOLIO (Réalisations en images/vidéos)
+  // =========================================================================
+  
+  async addPortfolioItem(userId: string, data: { title?: string; mediaUrl: string; mediaType: string }) {
+    return this.prisma.portfolioItem.create({
+      data: {
+        artisanId: userId,
+        title: data.title,
+        mediaUrl: data.mediaUrl,
+        mediaType: data.mediaType,
+      }
+    });
+  }
+
+  async deletePortfolioItem(userId: string, itemId: string) {
+    const item = await this.prisma.portfolioItem.findUnique({ where: { id: itemId }});
+    if (!item || item.artisanId !== userId) {
+      throw new NotFoundException('Élément du portfolio introuvable ou accès refusé');
+    }
+    return this.prisma.portfolioItem.delete({ where: { id: itemId }});
   }
 }

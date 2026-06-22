@@ -2,9 +2,11 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import helmet from 'helmet';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const configService = app.get(ConfigService);
   
   // Sécurité: Configuration de Helmet
   app.use(helmet());
@@ -21,6 +23,9 @@ async function bootstrap() {
   // Configuration CORS
   app.enableCors();
 
-  await app.listen(process.env.PORT ?? 3000);
+  const port = configService.get<number>('PORT') || 3000;
+  await app.listen(port);
+  console.log(`Application is running on: http://localhost:${port}`);
 }
 bootstrap();
+

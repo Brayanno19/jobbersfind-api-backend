@@ -22,4 +22,10 @@ export class SearchController {
   seedDictionary() {
     return this.nlpSeedService.seedDictionary();
   }
+
+  @Post('seed-artisans')
+  @HttpCode(200)
+  seedArtisans() {
+    return this.nlpSeedService.seedArtisans();
+  }
 }

@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, Body, UseGuards, Request, Post, UseInterceptors, UploadedFile, BadRequestException } from '@nestjs/common';
+import { Controller, Get, Patch, Body, UseGuards, Request, Post, UseInterceptors, UploadedFile, BadRequestException, Param, Delete } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ArtisansService } from './artisans.service';
 import { UpdateArtisanDto } from './dto/update-artisan.dto';
@@ -29,6 +29,17 @@ export class ArtisansController {
     return this.artisansService.updateLocation(req.user.userId, dto);
   }
 
+  @Post('me/avatar')
+  @UseInterceptors(FileInterceptor('file'))
+  async uploadAvatar(
+    @Request() req,
+    @UploadedFile() file: Express.Multer.File,
+  ) {
+    if (!file) throw new BadRequestException('Fichier image manquant');
+    const avatarUrl = await this.uploadsService.uploadFile(file, 'jobbersfind/avatars');
+    return this.artisansService.uploadAvatar(req.user.userId, avatarUrl);
+  }
+
   @Post('me/documents')
   @UseInterceptors(FileInterceptor('file'))
   async uploadDocument(
@@ -51,5 +62,46 @@ export class ArtisansController {
     if (!file) throw new BadRequestException('Fichier manquant');
     const url = await this.uploadsService.uploadFile(file, 'jobbersfind/videos');
     return this.artisansService.addVideo(req.user.userId, type, url);
+  }
+
+  // =========================================================================
+  // SERVICES
+  // =========================================================================
+
+  @Post('me/services')
+  addService(@Request() req, @Body() body: { title: string; description?: string; price?: number }) {
+    return this.artisansService.addService(req.user.userId, body);
+  }
+
+  @Patch('me/services/:serviceId')
+  updateService(@Request() req, @Param('serviceId') serviceId: string, @Body() body: { title?: string; description?: string; price?: number }) {
+    return this.artisansService.updateService(req.user.userId, serviceId, body);
+  }
+
+  @Delete('me/services/:serviceId')
+  deleteService(@Request() req, @Param('serviceId') serviceId: string) {
+    return this.artisansService.deleteService(req.user.userId, serviceId);
+  }
+
+  // =========================================================================
+  // PORTFOLIO
+  // =========================================================================
+
+  @Post('me/portfolio')
+  @UseInterceptors(FileInterceptor('file'))
+  async addPortfolioItem(
+    @Request() req,
+    @UploadedFile() file: Express.Multer.File,
+    @Body('title') title: string,
+    @Body('mediaType') mediaType: string = 'IMAGE',
+  ) {
+    if (!file) throw new BadRequestException('Fichier manquant');
+    const url = await this.uploadsService.uploadFile(file, 'jobbersfind/portfolio');
+    return this.artisansService.addPortfolioItem(req.user.userId, { title, mediaUrl: url, mediaType });
+  }
+
+  @Delete('me/portfolio/:itemId')
+  deletePortfolioItem(@Request() req, @Param('itemId') itemId: string) {
+    return this.artisansService.deletePortfolioItem(req.user.userId, itemId);
   }
 }

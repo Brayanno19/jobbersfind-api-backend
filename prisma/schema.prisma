@@ -29,7 +29,10 @@ model ClientUser {
   password    String
   firstName   String
   lastName    String?
-  isActive    Boolean  @default(true)
+  isActive        Boolean  @default(true)
+  isPhoneVerified Boolean  @default(false)
+  otpCode         String?
+  otpExpiresAt    DateTime?
   
   // Géolocalisation
   latitude     Float?
@@ -37,8 +40,12 @@ model ClientUser {
   city         String?
   neighborhood String?
 
+  // Avatar (Cloudinary)
+  avatarUrl    String?
+
   // Relations
   reviews      Review[]
+  chatRooms    ChatRoom[]
 
   fcmToken     String?
 
@@ -60,6 +67,9 @@ model ArtisanUser {
   nationality     String?
   isVerified      Boolean  @default(false)
   isActive        Boolean  @default(true)
+  isPhoneVerified Boolean  @default(false)
+  otpCode         String?
+  otpExpiresAt    DateTime?
   
   // Algorithme de recherche et crédibilité
   credibilityScore Float   @default(500.0) // Score en arrière-plan
@@ -71,12 +81,18 @@ model ArtisanUser {
   city            String?
   neighborhood    String?
 
+  // Avatar (Cloudinary)
+  avatarUrl       String?
+
   // Relations
   domains         JobDomain[]
   documents       ArtisanDocument[]
   videos          ArtisanVideo[]
   reviews         Review[]
   posts           Post[]
+  services        ArtisanService[]
+  portfolio       PortfolioItem[]
+  chatRooms       ChatRoom[]
 
   fcmToken        String?
 
@@ -204,4 +220,68 @@ model Post {
   
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// SERVICES ARTISAN
+// ---------------------------------------------------------------------------
+model ArtisanService {
+  id          String   @id @default(uuid())
+  artisanId   String
+  title       String
+  description String?  @db.Text
+  price       Float?   // Prix de base optionnel
+  
+  artisan     ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// PORTFOLIO ARTISAN
+// ---------------------------------------------------------------------------
+model PortfolioItem {
+  id          String   @id @default(uuid())
+  artisanId   String
+  title       String?
+  mediaUrl    String   // Lien Cloudinary
+  mediaType   String   // IMAGE, VIDEO
+  
+  artisan     ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// MESSAGERIE
+// ---------------------------------------------------------------------------
+model ChatRoom {
+  id          String   @id @default(uuid())
+  clientId    String
+  artisanId   String
+  
+  client      ClientUser  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  artisan     ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+  
+  messages    Message[]
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([clientId, artisanId])
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  roomId      String
+  senderId    String
+  senderRole  String   // CLIENT ou ARTISAN
+  content     String   @db.Text
+  isRead      Boolean  @default(false)
+  
+  room        ChatRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime @default(now())
 }

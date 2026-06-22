@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength, IsNumber, IsArray, ArrayMaxSize } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength, IsNumber, IsArray, ArrayMaxSize, ArrayMinSize } from 'class-validator';
 
 /**
  * DTO pour l'inscription d'un Artisan (Supporte le mode Simple et Complet)
@@ -8,9 +8,9 @@ export class RegisterArtisanDto {
   @IsString()
   firstName: string;
 
-  @IsOptional()
+  @IsNotEmpty({ message: 'Le nom de famille est requis' })
   @IsString()
-  lastName?: string;
+  lastName: string;
 
   @IsOptional()
   @IsString()
@@ -29,11 +29,7 @@ export class RegisterArtisanDto {
   @MinLength(6, { message: 'Le mot de passe doit contenir au moins 6 caractères' })
   password: string;
 
-  // --- Champs Mode Complet ---
-  @IsOptional()
-  @IsString()
-  nationality?: string;
-
+  // --- Champs Mode Simple (Recommandés) ---
   @IsOptional()
   @IsString()
   city?: string;
@@ -41,6 +37,11 @@ export class RegisterArtisanDto {
   @IsOptional()
   @IsString()
   neighborhood?: string;
+
+  // --- Champs Mode Complet ---
+  @IsOptional()
+  @IsString()
+  nationality?: string;
 
   @IsOptional()
   @IsNumber()
@@ -53,6 +54,7 @@ export class RegisterArtisanDto {
   @IsOptional()
   @IsArray()
   @IsString({ each: true })
-  @ArrayMaxSize(3, { message: 'Un artisan peut avoir au maximum 3 métiers' })
+  @ArrayMinSize(1, { message: 'Un artisan doit choisir au moins 1 métier' })
+  @ArrayMaxSize(4, { message: 'Un artisan peut avoir au maximum 4 métiers' })
   domainIds?: string[];
 }

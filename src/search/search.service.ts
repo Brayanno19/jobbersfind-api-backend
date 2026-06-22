@@ -26,7 +26,7 @@ export class SearchService {
     const artisansRaw: any[] = await this.prisma.$queryRaw`
       SELECT 
         a.id, a."firstName", a."lastName", a."companyName", a."averageRating", a."credibilityScore",
-        a.latitude, a.longitude,
+        a.latitude, a.longitude, a.city, a.neighborhood, a."avatarUrl", a."phoneNumber",
         ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( a.latitude ) ) 
         * cos( radians( a.longitude ) - radians(${longitude}) ) 
         + sin( radians(${latitude}) ) * sin( radians( a.latitude ) ) ) ) AS distance

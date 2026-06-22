@@ -23,6 +23,7 @@ export class ClientsService {
         latitude: true,
         longitude: true,
         isActive: true,
+        avatarUrl: true,
         createdAt: true,
       }
     });
@@ -51,7 +52,19 @@ export class ClientsService {
         neighborhood: true,
         latitude: true,
         longitude: true,
+        avatarUrl: true,
       }
+    });
+  }
+
+  /**
+   * Met à jour l'avatar (URL Cloudinary) du client
+   */
+  async uploadAvatar(userId: string, avatarUrl: string) {
+    return this.prisma.clientUser.update({
+      where: { id: userId },
+      data: { avatarUrl },
+      select: { id: true, avatarUrl: true },
     });
   }
 }
