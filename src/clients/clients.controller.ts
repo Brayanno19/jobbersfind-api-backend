@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, Body, UseGuards, Request, Post, UseInterceptors, UploadedFile, BadRequestException } from '@nestjs/common';
+import { Controller, Get, Patch, Body, UseGuards, Request, Post, UseInterceptors, UploadedFile, BadRequestException, Param, Delete } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ClientsService } from './clients.service';
 import { UpdateClientDto } from './dto/update-client.dto';
@@ -41,5 +41,46 @@ export class ClientsController {
     if (!file) throw new BadRequestException('Fichier image manquant');
     const avatarUrl = await this.uploadsService.uploadFile(file, 'jobbersfind/avatars');
     return this.clientsService.uploadAvatar(req.user.userId, avatarUrl);
+  }
+
+  /**
+   * FAVORIS
+   */
+  @Get('favorites')
+  getFavorites(@Request() req) {
+    return this.clientsService.getFavorites(req.user.userId);
+  }
+
+  @Post('favorites/:artisanId')
+  addFavorite(@Request() req, @Param('artisanId') artisanId: string) {
+    return this.clientsService.addFavorite(req.user.userId, artisanId);
+  }
+
+  @Delete('favorites/:artisanId')
+  removeFavorite(@Request() req, @Param('artisanId') artisanId: string) {
+    return this.clientsService.removeFavorite(req.user.userId, artisanId);
+  }
+
+  /**
+   * HISTORIQUE DE RECHERCHE
+   */
+  @Get('search-history')
+  getSearchHistory(@Request() req) {
+    return this.clientsService.getSearchHistory(req.user.userId);
+  }
+
+  @Post('search-history')
+  addSearchHistory(
+    @Request() req,
+    @Body('query') query: string,
+    @Body('location') location: string,
+    @Body('resultsCount') resultsCount: number,
+  ) {
+    return this.clientsService.addSearchHistory(req.user.userId, query, location, resultsCount);
+  }
+
+  @Delete('search-history')
+  clearSearchHistory(@Request() req) {
+    return this.clientsService.clearSearchHistory(req.user.userId);
   }
 }

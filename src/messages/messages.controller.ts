@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, UseGuards, Request, BadRequestException } from '@nestjs/common';
 import { MessagesService } from './messages.service';
 import { JwtAuthGuard } from '../auth/guards/roles.guard';
 
@@ -24,8 +24,16 @@ export class MessagesController {
       clientId = req.user.userId;
       artisanId = body.artisanId || '';
     } else {
+      // Un artisan essaie de discuter
+      if (!body.clientId) {
+        throw new BadRequestException("En tant qu'artisan, vous ne pouvez pas démarrer une discussion avec un autre artisan.");
+      }
       artisanId = req.user.userId;
-      clientId = body.clientId || '';
+      clientId = body.clientId;
+    }
+
+    if (!clientId || !artisanId) {
+      throw new BadRequestException("Les identifiants du client et de l'artisan sont requis.");
     }
 
     return this.messagesService.getOrCreateRoom(clientId, artisanId);

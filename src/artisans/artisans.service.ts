@@ -115,19 +115,44 @@ export class ArtisansService {
   // SERVICES (Prestations de l'artisan)
   // =========================================================================
   
-  async addService(userId: string, data: { title: string; description?: string; price?: number }) {
+  async addService(userId: string, data: {
+    title: string;
+    description?: string;
+    price?: number;
+    minPrice?: number;
+    maxPrice?: number;
+    deliveryTime?: string;
+    requirements?: string;
+    marketingNote?: string;
+    isAvailableNow?: boolean;
+  }) {
     return this.prisma.artisanService.create({
       data: {
         artisanId: userId,
         title: data.title,
         description: data.description,
         price: data.price ? Number(data.price) : null,
+        minPrice: data.minPrice ? Number(data.minPrice) : null,
+        maxPrice: data.maxPrice ? Number(data.maxPrice) : null,
+        deliveryTime: data.deliveryTime,
+        requirements: data.requirements,
+        marketingNote: data.marketingNote,
+        isAvailableNow: data.isAvailableNow ?? true,
       }
     });
   }
 
-  async updateService(userId: string, serviceId: string, data: { title?: string; description?: string; price?: number }) {
-    // Vérifier que le service appartient bien à l'artisan
+  async updateService(userId: string, serviceId: string, data: {
+    title?: string;
+    description?: string;
+    price?: number;
+    minPrice?: number;
+    maxPrice?: number;
+    deliveryTime?: string;
+    requirements?: string;
+    marketingNote?: string;
+    isAvailableNow?: boolean;
+  }) {
     const service = await this.prisma.artisanService.findUnique({ where: { id: serviceId }});
     if (!service || service.artisanId !== userId) {
       throw new NotFoundException('Service introuvable ou accès refusé');
@@ -139,6 +164,12 @@ export class ArtisansService {
         title: data.title,
         description: data.description,
         price: data.price !== undefined ? (data.price ? Number(data.price) : null) : undefined,
+        minPrice: data.minPrice !== undefined ? (data.minPrice ? Number(data.minPrice) : null) : undefined,
+        maxPrice: data.maxPrice !== undefined ? (data.maxPrice ? Number(data.maxPrice) : null) : undefined,
+        deliveryTime: data.deliveryTime,
+        requirements: data.requirements,
+        marketingNote: data.marketingNote,
+        isAvailableNow: data.isAvailableNow,
       }
     });
   }

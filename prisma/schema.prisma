@@ -23,17 +23,17 @@ model Admin {
 // CLIENTS
 // ---------------------------------------------------------------------------
 model ClientUser {
-  id          String   @id @default(uuid())
-  email       String?  @unique
-  phoneNumber String   @unique
-  password    String
-  firstName   String
-  lastName    String?
-  isActive        Boolean  @default(true)
-  isPhoneVerified Boolean  @default(false)
+  id              String    @id @default(uuid())
+  email           String?   @unique
+  phoneNumber     String    @unique
+  password        String
+  firstName       String
+  lastName        String?
+  isActive        Boolean   @default(true)
+  isPhoneVerified Boolean   @default(false)
   otpCode         String?
   otpExpiresAt    DateTime?
-  
+
   // Géolocalisation
   latitude     Float?
   longitude    Float?
@@ -41,136 +41,141 @@ model ClientUser {
   neighborhood String?
 
   // Avatar (Cloudinary)
-  avatarUrl    String?
+  avatarUrl String?
 
   // Relations
-  reviews      Review[]
-  chatRooms    ChatRoom[]
+  reviews         Review[]
+  chatRooms       ChatRoom[]
+  favorites       FavoriteArtisan[]
+  searchHistories SearchHistory[]
 
-  fcmToken     String?
+  fcmToken String?
 
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ---------------------------------------------------------------------------
 // ARTISANS
 // ---------------------------------------------------------------------------
 model ArtisanUser {
-  id              String   @id @default(uuid())
-  email           String?  @unique
-  phoneNumber     String   @unique
+  id              String    @id @default(uuid())
+  email           String?   @unique
+  phoneNumber     String    @unique
   password        String
   firstName       String
   lastName        String?
   companyName     String?
   nationality     String?
-  isVerified      Boolean  @default(false)
-  isActive        Boolean  @default(true)
-  isPhoneVerified Boolean  @default(false)
+  isVerified      Boolean   @default(false)
+  isActive        Boolean   @default(true)
+  isPhoneVerified Boolean   @default(false)
   otpCode         String?
   otpExpiresAt    DateTime?
-  
+
   // Algorithme de recherche et crédibilité
-  credibilityScore Float   @default(500.0) // Score en arrière-plan
-  averageRating    Float   @default(0.0)   // Étoiles de 0 à 5
-  
+  credibilityScore Float @default(500.0) // Score en arrière-plan
+  averageRating    Float @default(0.0) // Étoiles de 0 à 5
+
   // Géolocalisation (PostGIS plus tard)
-  latitude        Float?
-  longitude       Float?
-  city            String?
-  neighborhood    String?
+  latitude     Float?
+  longitude    Float?
+  city         String?
+  neighborhood String?
 
   // Avatar (Cloudinary)
-  avatarUrl       String?
+  avatarUrl String?
 
   // Relations
-  domains         JobDomain[]
-  documents       ArtisanDocument[]
-  videos          ArtisanVideo[]
-  reviews         Review[]
-  posts           Post[]
-  services        ArtisanService[]
-  portfolio       PortfolioItem[]
-  chatRooms       ChatRoom[]
+  domains     JobDomain[]
+  documents   ArtisanDocument[]
+  videos      ArtisanVideo[]
+  reviews     Review[]
+  posts       Post[]
+  services    ArtisanService[]
+  portfolio   PortfolioItem[]
+  chatRooms   ChatRoom[]
+  favoritedBy FavoriteArtisan[]
 
-  fcmToken        String?
+  fcmToken String?
 
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ---------------------------------------------------------------------------
 // DOMAINES D'ACTIVITÉ (MÉTIERS)
 // ---------------------------------------------------------------------------
 model JobDomain {
-  id          String   @id @default(uuid())
-  name        String   @unique // ex: Plombier, Électricien
+  id          String  @id @default(uuid())
+  name        String  @unique // ex: Plombier, Électricien
   description String?
-  isActive    Boolean  @default(true)
-  
+  icon        String? // Ex: "kitchen_rounded"
+  color       String? // Ex: "0xFF3B82F6"
+  isActive    Boolean @default(true)
+
   // L'artisan peut choisir jusqu'à 3 métiers
-  artisans    ArtisanUser[]
+  artisans ArtisanUser[]
   // Mots-clés NLP associés à ce métier
-  keywords    SearchKeyword[]
+  keywords SearchKeyword[]
 }
 
 // ---------------------------------------------------------------------------
 // DICTIONNAIRE NLP (Mots-clés de recherche)
 // ---------------------------------------------------------------------------
 model SearchKeyword {
-  id          String   @id @default(uuid())
-  word        String   @unique // Mot ou expression, ex: "fuite", "kaba", "bendskin"
-  weight      Int      @default(1) // Poids d'importance (ex: 5 pour un mot clé très fort)
-  domainId    String
-  
-  domain      JobDomain @relation(fields: [domainId], references: [id], onDelete: Cascade)
-  createdAt   DateTime  @default(now())
+  id       String @id @default(uuid())
+  word     String @unique // Mot ou expression, ex: "fuite", "kaba", "bendskin"
+  weight   Int    @default(1) // Poids d'importance (ex: 5 pour un mot clé très fort)
+  domainId String
+
+  domain    JobDomain @relation(fields: [domainId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
 }
 
 // ---------------------------------------------------------------------------
 // DOCUMENTS ARTISAN (Pièces d'identité, Diplômes)
 // ---------------------------------------------------------------------------
 model ArtisanDocument {
-  id            String   @id @default(uuid())
-  artisanId     String
-  type          String   // ID_CARD, PASSPORT, DIPLOMA, CERTIFICATE
-  url           String   // Lien Cloudinary
-  status        String   @default("PENDING") // PENDING, VALIDATED, REJECTED
-  uploadedAt    DateTime @default(now())
+  id         String   @id @default(uuid())
+  artisanId  String
+  type       String // ID_CARD, PASSPORT, DIPLOMA, CERTIFICATE
+  url        String // Lien Cloudinary
+  status     String   @default("PENDING") // PENDING, VALIDATED, REJECTED
+  uploadedAt DateTime @default(now())
 
-  artisan       ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+  artisan ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
 }
 
 // ---------------------------------------------------------------------------
 // VIDÉOS ARTISAN
 // ---------------------------------------------------------------------------
 model ArtisanVideo {
-  id            String   @id @default(uuid())
-  artisanId     String
-  type          String   // PRESENTATION, PORTFOLIO
-  url           String   // Lien Cloudinary
-  uploadedAt    DateTime @default(now())
+  id         String   @id @default(uuid())
+  artisanId  String
+  type       String // PRESENTATION, PORTFOLIO
+  url        String // Lien Cloudinary
+  uploadedAt DateTime @default(now())
 
-  artisan       ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+  artisan ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
 }
 
 // ---------------------------------------------------------------------------
 // AVIS ET NOTATIONS (Reviews)
 // ---------------------------------------------------------------------------
 model Review {
-  id          String   @id @default(uuid())
-  rating      Int      // 1 à 5
-  comment     String?
-  
-  clientId    String
-  artisanId   String
-  
-  client      ClientUser  @relation(fields: [clientId], references: [id], onDelete: Cascade)
-  artisan     ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+  id      String  @id @default(uuid())
+  rating  Int // 1 à 5
+  comment String?
 
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  clientId  String
+  artisanId String
+
+  client  ClientUser  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  artisan ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@unique([clientId, artisanId]) // Un client ne peut laisser qu'un seul avis par artisan
 }
@@ -179,109 +184,146 @@ model Review {
 // SIGNALEMENTS (Reports)
 // ---------------------------------------------------------------------------
 model Report {
-  id           String   @id @default(uuid())
+  id           String @id @default(uuid())
   reporterId   String
-  reporterRole String   // CLIENT, ARTISAN
+  reporterRole String // CLIENT, ARTISAN
   reportedId   String
-  reportedRole String   // CLIENT, ARTISAN
-  type         String   // FAKE_PROFILE, FRAUD, BAD_SERVICE, OTHER
+  reportedRole String // CLIENT, ARTISAN
+  type         String // FAKE_PROFILE, FRAUD, BAD_SERVICE, OTHER
   description  String
-  status       String   @default("PENDING") // PENDING, RESOLVED, DISMISSED
-  
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  status       String @default("PENDING") // PENDING, RESOLVED, DISMISSED
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ---------------------------------------------------------------------------
 // NOTIFICATIONS (History)
 // ---------------------------------------------------------------------------
 model Notification {
-  id           String   @id @default(uuid())
-  userId       String
-  userRole     String   // CLIENT, ARTISAN
-  title        String
-  body         String
-  isRead       Boolean  @default(false)
-  
-  createdAt    DateTime @default(now())
+  id       String  @id @default(uuid())
+  userId   String
+  userRole String // CLIENT, ARTISAN
+  title    String
+  body     String
+  isRead   Boolean @default(false)
+
+  createdAt DateTime @default(now())
 }
 
 // ---------------------------------------------------------------------------
 // PUBLICATIONS (Posts - Réseau Social Léger)
 // ---------------------------------------------------------------------------
 model Post {
-  id           String   @id @default(uuid())
-  artisanId    String
-  content      String   @db.Text
-  mediaUrl     String?  // Lien Cloudinary
-  mediaType    String?  // IMAGE, VIDEO
-  
-  artisan      ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
-  
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id        String  @id @default(uuid())
+  artisanId String
+  content   String  @db.Text
+  mediaUrl  String? // Lien Cloudinary
+  mediaType String? // IMAGE, VIDEO
+
+  artisan ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ---------------------------------------------------------------------------
 // SERVICES ARTISAN
 // ---------------------------------------------------------------------------
 model ArtisanService {
-  id          String   @id @default(uuid())
-  artisanId   String
-  title       String
-  description String?  @db.Text
-  price       Float?   // Prix de base optionnel
-  
-  artisan     ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
-  
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id             String  @id @default(uuid())
+  artisanId      String
+  title          String
+  description    String? @db.Text
+  price          Float? // Prix fixe (optionnel)
+  minPrice       Float? // Prix minimum (optionnel, pour une fourchette)
+  maxPrice       Float? // Prix maximum (optionnel, pour une fourchette)
+  deliveryTime   String? // Ex: "24h", "Sous 48h", "Sur devis"
+  requirements   String? @db.Text // Ex: "Le client doit fournir les matériaux"
+  marketingNote  String? @db.Text // Ex: "Devis gratuit pour les 5 premiers clients"
+  isAvailableNow Boolean @default(true) // Disponible maintenant ou sur RDV
+
+  artisan ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ---------------------------------------------------------------------------
 // PORTFOLIO ARTISAN
 // ---------------------------------------------------------------------------
 model PortfolioItem {
-  id          String   @id @default(uuid())
-  artisanId   String
-  title       String?
-  mediaUrl    String   // Lien Cloudinary
-  mediaType   String   // IMAGE, VIDEO
-  
-  artisan     ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
-  
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String  @id @default(uuid())
+  artisanId String
+  title     String?
+  mediaUrl  String // Lien Cloudinary
+  mediaType String // IMAGE, VIDEO
+
+  artisan ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ---------------------------------------------------------------------------
 // MESSAGERIE
 // ---------------------------------------------------------------------------
 model ChatRoom {
-  id          String   @id @default(uuid())
-  clientId    String
-  artisanId   String
-  
-  client      ClientUser  @relation(fields: [clientId], references: [id], onDelete: Cascade)
-  artisan     ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
-  
-  messages    Message[]
-  
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String @id @default(uuid())
+  clientId  String
+  artisanId String
+
+  client  ClientUser  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  artisan ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+
+  messages Message[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@unique([clientId, artisanId])
 }
 
 model Message {
-  id          String   @id @default(uuid())
-  roomId      String
-  senderId    String
-  senderRole  String   // CLIENT ou ARTISAN
-  content     String   @db.Text
-  isRead      Boolean  @default(false)
-  
-  room        ChatRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
-  
-  createdAt   DateTime @default(now())
+  id         String  @id @default(uuid())
+  roomId     String
+  senderId   String
+  senderRole String // CLIENT ou ARTISAN
+  content    String  @db.Text
+  isRead     Boolean @default(false)
+
+  room ChatRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// FAVORIS
+// ---------------------------------------------------------------------------
+model FavoriteArtisan {
+  id        String @id @default(uuid())
+  clientId  String
+  artisanId String
+
+  client  ClientUser  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  artisan ArtisanUser @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([clientId, artisanId])
+}
+
+// ---------------------------------------------------------------------------
+// HISTORIQUE DE RECHERCHE
+// ---------------------------------------------------------------------------
+model SearchHistory {
+  id           String  @id @default(uuid())
+  clientId     String
+  query        String
+  location     String?
+  resultsCount Int     @default(0)
+
+  client ClientUser @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
 }

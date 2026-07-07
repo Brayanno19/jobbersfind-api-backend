@@ -103,4 +103,27 @@ export class SearchService {
     // Tri décroissant
     return results.sort((a, b) => b.globalScore - a.globalScore);
   }
+
+  async getArtisanProfileById(id: string) {
+    const artisan = await this.prisma.artisanUser.findUnique({
+      where: { id },
+      include: {
+        domains: true,
+        documents: {
+          select: { id: true, type: true, url: true, status: true, uploadedAt: true }
+        },
+        videos: {
+          select: { id: true, type: true, url: true, uploadedAt: true }
+        },
+        services: true,
+        portfolio: true,
+      }
+    });
+
+    if (!artisan) {
+      return null;
+    }
+
+    return artisan;
+  }
 }

@@ -1,6 +1,26 @@
 version: '3.8'
 
 services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: workplace_api
+    restart: always
+    ports:
+      - '${PORT:-3000}:3000'
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-postgres}@db:5432/${DB_NAME:-workplace_db}?schema=public
+      - REDIS_HOST=redis
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - JWT_SECRET=${JWT_SECRET}
+      # Ajoutez d'autres variables d'environnement nécessaires ici
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
   db:
     image: postgis/postgis:15-3.4
     container_name: workplace_db

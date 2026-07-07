@@ -1,4 +1,4 @@
-import { Controller, Post, Body, HttpCode, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, HttpCode, UseGuards, Get, Param } from '@nestjs/common';
 import { SearchService } from './search.service';
 import { SearchQueryDto } from './dto/search-query.dto';
 import { NlpSeedService } from './seed/nlp-seed.service';
@@ -15,6 +15,11 @@ export class SearchController {
   @HttpCode(200)
   searchArtisans(@Body() dto: SearchQueryDto) {
     return this.searchService.searchArtisans(dto);
+  }
+
+  @Get('artisan/:id')
+  getArtisanProfileById(@Param('id') id: string) {
+    return this.searchService.getArtisanProfileById(id);
   }
 
   @UseGuards(JwtAuthGuard, AdminGuard)

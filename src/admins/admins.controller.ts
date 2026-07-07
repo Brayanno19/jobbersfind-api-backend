@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, Param, Body, UseGuards, Query } from '@nestjs/common';
+import { Controller, Get, Patch, Param, Body, UseGuards, Query, Post, Delete } from '@nestjs/common';
 import { AdminsService } from './admins.service';
 import { JwtAuthGuard, AdminGuard } from '../auth/guards/roles.guard';
 
@@ -42,5 +42,34 @@ export class AdminsController {
     @Body('isActive') isActive: boolean
   ) {
     return this.adminsService.updateArtisanStatus(id, isActive);
+  }
+  // --- CATEGORIES (JobDomain) ---
+  @Get('categories')
+  getCategories() {
+    return this.adminsService.getCategories();
+  }
+
+  @Post('categories')
+  createCategory(@Body() data: { name: string, description?: string, isActive?: boolean }) {
+    return this.adminsService.createCategory(data);
+  }
+
+  @Patch('categories/:id')
+  updateCategory(
+    @Param('id') id: string,
+    @Body() data: { name?: string, description?: string, isActive?: boolean }
+  ) {
+    return this.adminsService.updateCategory(id, data);
+  }
+
+  @Delete('categories/:id')
+  deleteCategory(@Param('id') id: string) {
+    return this.adminsService.deleteCategory(id);
+  }
+
+  // --- NOTIFICATIONS GLOBALES ---
+  @Post('notifications/broadcast')
+  broadcastNotification(@Body() data: { title: string, body: string, target: 'CLIENTS' | 'ARTISANS' | 'ALL' }) {
+    return this.adminsService.broadcastNotification(data);
   }
 }

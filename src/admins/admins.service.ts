@@ -9,6 +9,9 @@ export class AdminsService {
    * Récupérer les statistiques globales de la plateforme
    */
   async getGlobalStats() {
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
     const [
       totalClients,
       totalArtisans,
@@ -16,7 +19,11 @@ export class AdminsService {
       totalPosts,
       totalReviews,
       totalReports,
-      pendingReports
+      pendingReports,
+      recentClients,
+      recentArtisans,
+      last7DaysClients,
+      last7DaysArtisans
     ] = await Promise.all([
       this.prisma.clientUser.count(),
       this.prisma.artisanUser.count(),
@@ -24,8 +31,44 @@ export class AdminsService {
       this.prisma.post.count(),
       this.prisma.review.count(),
       this.prisma.report.count(),
-      this.prisma.report.count({ where: { status: 'PENDING' } })
+      this.prisma.report.count({ where: { status: 'PENDING' } }),
+      this.prisma.clientUser.findMany({
+        take: 5,
+        orderBy: { createdAt: 'desc' },
+        select: { id: true, firstName: true, lastName: true, email: true, createdAt: true, isActive: true }
+      }),
+      this.prisma.artisanUser.findMany({
+        take: 5,
+        orderBy: { createdAt: 'desc' },
+        select: { id: true, firstName: true, lastName: true, companyName: true, createdAt: true, isVerified: true, isActive: true }
+      }),
+      this.prisma.clientUser.findMany({
+        where: { createdAt: { gte: sevenDaysAgo } },
+        select: { createdAt: true }
+      }),
+      this.prisma.artisanUser.findMany({
+        where: { createdAt: { gte: sevenDaysAgo } },
+        select: { createdAt: true }
+      })
     ]);
+
+    const days = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+    const chartData: any[] = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const dayName = days[d.getDay()];
+      const dStr = d.toISOString().split('T')[0];
+
+      const cCount = last7DaysClients.filter(c => c.createdAt.toISOString().split('T')[0] === dStr).length;
+      const aCount = last7DaysArtisans.filter(a => a.createdAt.toISOString().split('T')[0] === dStr).length;
+
+      chartData.push({
+        name: dayName,
+        clients: cCount,
+        artisans: aCount
+      });
+    }
 
     return {
       users: {
@@ -43,7 +86,12 @@ export class AdminsService {
       moderation: {
         totalReports,
         pendingReports
-      }
+      },
+      recentActivity: {
+        clients: recentClients,
+        artisans: recentArtisans
+      },
+      chartData
     };
   }
 
@@ -136,4 +184,100 @@ export class AdminsService {
       select: { id: true, firstName: true, companyName: true, isActive: true }
     });
   }
+
+  /**
+   * --- CATEGORIES (JobDomain) ---
+   */
+  async getCategories() {
+    return this.prisma.jobDomain.findMany({
+      orderBy: { name: 'asc' },
+      include: {
+        _count: {
+          select: { artisans: true }
+        }
+      }
+    });
+  }
+
+  async createCategory(data: { name: string, description?: string, isActive?: boolean }) {
+    return this.prisma.jobDomain.create({
+      data: {
+        name: data.name,
+        description: data.description,
+        isActive: data.isActive ?? true
+      }
+    });
+  }
+
+  async updateCategory(id: string, data: { name?: string, description?: string, isActive?: boolean }) {
+    const category = await this.prisma.jobDomain.findUnique({ where: { id } });
+    if (!category) throw new NotFoundException('Catégorie non trouvée');
+    
+    return this.prisma.jobDomain.update({
+      where: { id },
+      data
+    });
+  }
+
+  async deleteCategory(id: string) {
+    const category = await this.prisma.jobDomain.findUnique({ where: { id }, include: { artisans: true } });
+    if (!category) throw new NotFoundException('Catégorie non trouvée');
+    
+    if (category.artisans.length > 0) {
+      await this.prisma.jobDomain.update({
+        where: { id },
+        data: { isActive: false }
+      });
+      return { success: true, message: 'Catégorie désactivée car elle contient des artisans' };
+    }
+    
+    await this.prisma.jobDomain.delete({ where: { id } });
+    return { success: true, message: 'Catégorie supprimée avec succès' };
+  }
+
+  /**
+   * --- NOTIFICATIONS GLOBALES ---
+   */
+  async broadcastNotification(data: { title: string, body: string, target: 'CLIENTS' | 'ARTISANS' | 'ALL' }) {
+    let clients: any[] = [];
+    let artisans: any[] = [];
+
+    if (data.target === 'CLIENTS' || data.target === 'ALL') {
+      clients = await this.prisma.clientUser.findMany({ select: { id: true } });
+    }
+    if (data.target === 'ARTISANS' || data.target === 'ALL') {
+      artisans = await this.prisma.artisanUser.findMany({ select: { id: true } });
+    }
+
+    const notifications: any[] = [];
+    
+    for (const c of clients) {
+      notifications.push({
+        userId: c.id,
+        userRole: 'CLIENT',
+        title: data.title,
+        body: data.body,
+        isRead: false
+      });
+    }
+
+    for (const a of artisans) {
+      notifications.push({
+        userId: a.id,
+        userRole: 'ARTISAN',
+        title: data.title,
+        body: data.body,
+        isRead: false
+      });
+    }
+
+    if (notifications.length > 0) {
+      await this.prisma.notification.createMany({
+        data: notifications
+      });
+    }
+
+    return { success: true, count: notifications.length, message: 'Notifications envoyées avec succès' };
+  }
 }
+
