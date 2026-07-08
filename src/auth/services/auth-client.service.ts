@@ -119,8 +119,19 @@ export class AuthClientService {
       throw new UnauthorizedException('Ce compte a été suspendu par l\'administration');
     }
 
-    // NOUVEAU: Bloquer si le téléphone n'est pas vérifié
+    // NOUVEAU: Bloquer si le téléphone n'est pas vérifié et générer un nouvel OTP
     if (!client.isPhoneVerified) {
+      const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+      const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
+
+      await this.prisma.clientUser.update({
+        where: { id: client.id },
+        data: { otpCode, otpExpiresAt },
+      });
+
+      const otpTarget = client.email ? client.email : client.phoneNumber;
+      await this.mailService.sendOtp(otpTarget, otpCode);
+
       throw new UnauthorizedException('OTP_REQUIRED');
     }
 

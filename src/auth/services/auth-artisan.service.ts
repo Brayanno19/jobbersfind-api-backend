@@ -114,6 +114,17 @@ export class AuthArtisanService {
     }
 
     if (!artisan.isPhoneVerified) {
+      const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+      const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
+
+      await this.prisma.artisanUser.update({
+        where: { id: artisan.id },
+        data: { otpCode, otpExpiresAt },
+      });
+
+      const otpTarget = artisan.email ? artisan.email : artisan.phoneNumber;
+      await this.mailService.sendOtp(otpTarget, otpCode);
+
       throw new UnauthorizedException('OTP_REQUIRED');
     }
 

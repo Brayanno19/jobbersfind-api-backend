@@ -42,4 +42,5 @@ COPY --from=builder /usr/src/app/dist ./dist
 EXPOSE 3000
 
 # Commande pour démarrer l'application (assurez-vous d'avoir prisma db push ou migrate deploy lors de l'init si besoin)
-CMD ["node", "dist/main"]
+CMD ["node", "dist/src/main"]
+
