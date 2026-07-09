@@ -1,4 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import * as nodemailer from 'nodemailer';
 
 @Injectable()
@@ -6,15 +7,15 @@ export class MailService {
   private readonly logger = new Logger(MailService.name);
   private transporter: nodemailer.Transporter;
 
-  constructor() {
+  constructor(private configService: ConfigService) {
     // Initialisation du transporter Nodemailer avec la configuration Brevo
     this.transporter = nodemailer.createTransport({
-      host: process.env.BREVO_SMTP_HOST || 'smtp-relay.brevo.com',
-      port: parseInt(process.env.BREVO_SMTP_PORT || '587', 10),
+      host: this.configService.get<string>('BREVO_SMTP_HOST') || 'smtp-relay.brevo.com',
+      port: parseInt(this.configService.get<string>('BREVO_SMTP_PORT') || '587', 10),
       secure: false, // true pour le port 465, false pour les autres (STARTTLS)
       auth: {
-        user: process.env.BREVO_SMTP_USER,
-        pass: process.env.BREVO_SMTP_PASSWORD,
+        user: this.configService.get<string>('BREVO_SMTP_USER'),
+        pass: this.configService.get<string>('BREVO_SMTP_PASSWORD'),
       },
     });
   }
@@ -36,7 +37,10 @@ export class MailService {
     this.logger.log(`=========================================`);
 
     // 2. Envoi via Brevo si l'utilisateur a configuré ses clés
-    if (process.env.BREVO_SMTP_USER && process.env.BREVO_SMTP_PASSWORD && process.env.BREVO_SMTP_PASSWORD !== 'votre_mot_de_passe_ou_cle_smtp') {
+    const smtpUser = this.configService.get<string>('BREVO_SMTP_USER');
+    const smtpPass = this.configService.get<string>('BREVO_SMTP_PASSWORD');
+
+    if (smtpUser && smtpPass && smtpPass !== 'votre_mot_de_passe_ou_cle_smtp') {
       try {
         await this.sendViaBrevo(to, otp);
       } catch (error) {
@@ -53,8 +57,8 @@ export class MailService {
   private async sendViaBrevo(to: string, otp: string): Promise<void> {
     this.logger.debug(`[BREVO SMTP] Tentative d'envoi réseau de l'email contenant l'OTP à ${to}...`);
     
-    const senderEmail = process.env.BREVO_SENDER_EMAIL || 'noreply@jobbersfind.com';
-    const senderName = process.env.BREVO_SENDER_NAME || 'JobbersFind';
+    const senderEmail = this.configService.get<string>('BREVO_SENDER_EMAIL') || 'noreply@jobbersfind.com';
+    const senderName = this.configService.get<string>('BREVO_SENDER_NAME') || 'JobbersFind';
 
     const mailOptions = {
       from: `"${senderName}" <${senderEmail}>`,
