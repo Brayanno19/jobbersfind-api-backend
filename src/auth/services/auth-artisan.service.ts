@@ -7,6 +7,7 @@ import { LoginDto } from '../dto/login.dto';
 import { VerifyOtpDto, ResendOtpDto } from '../dto/verify-otp.dto';
 import { ForgotPasswordDto } from '../dto/forgot-password.dto';
 import { ResetPasswordDto } from '../dto/reset-password.dto';
+import { DeleteAccountDto } from '../dto/delete-account.dto';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -286,5 +287,41 @@ export class AuthArtisanService {
     });
 
     return { message: 'Mot de passe réinitialisé avec succès' };
+  }
+
+  /**
+   * Suppression du compte artisan
+   */
+  async deleteAccount(userId: string, dto: DeleteAccountDto) {
+    const artisan = await this.prisma.artisanUser.findUnique({
+      where: { id: userId }
+    });
+
+    if (!artisan) {
+      throw new UnauthorizedException('Utilisateur introuvable');
+    }
+
+    const isPasswordValid = await bcrypt.compare(dto.password, artisan.password);
+    if (!isPasswordValid) {
+      throw new UnauthorizedException('Mot de passe incorrect');
+    }
+
+    // Créer la demande de suppression pour historique (audit)
+    await this.prisma.accountDeletionRequest.create({
+      data: {
+        userId: artisan.id,
+        userRole: 'ARTISAN',
+        reason: dto.reason,
+      }
+    });
+
+    // Supprimer l'utilisateur. La contrainte onDelete: Cascade va supprimer les relations (services, posts, portfolio, etc.)
+    await this.prisma.artisanUser.delete({
+      where: { id: artisan.id }
+    });
+
+    this.logger.log(`Compte artisan supprimé : ${artisan.id}`);
+
+    return { message: 'Compte supprimé avec succès' };
   }
 }

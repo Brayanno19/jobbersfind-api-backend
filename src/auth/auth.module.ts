@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthClientController } from './controllers/auth-client.controller';
 import { AuthArtisanController } from './controllers/auth-artisan.controller';
 import { AuthAdminController } from './controllers/auth-admin.controller';
+import { AuthController } from './controllers/auth.controller';
 
 import { AuthClientService } from './services/auth-client.service';
 import { AuthArtisanService } from './services/auth-artisan.service';
@@ -31,6 +32,7 @@ import { MailModule } from '../common/mail.module';
     AuthClientController,
     AuthArtisanController,
     AuthAdminController,
+    AuthController,
   ],
   providers: [
     AuthClientService,

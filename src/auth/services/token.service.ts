@@ -15,15 +15,17 @@ export class TokenService {
   async generateTokens(userId: string, role: string) {
     const payload = { sub: userId, role };
     const secret = this.configService.get<string>('JWT_SECRET');
+    const accessExpiresIn = this.configService.get<string>('JWT_ACCESS_EXPIRES_IN') || '7d';
+    const refreshExpiresIn = this.configService.get<string>('JWT_REFRESH_EXPIRES_IN') || '30d';
 
     const [accessToken, refreshToken] = await Promise.all([
       this.jwtService.signAsync(payload, {
         secret,
-        expiresIn: '15m',
+        expiresIn: accessExpiresIn as any,
       }),
       this.jwtService.signAsync(payload, {
         secret,
-        expiresIn: '7d',
+        expiresIn: refreshExpiresIn as any,
       }),
     ]);
 
@@ -31,6 +33,21 @@ export class TokenService {
       accessToken,
       refreshToken,
     };
+  }
+
+  /**
+   * Renouvelle les tokens à partir d'un refresh token
+   */
+  async refreshTokens(refreshToken: string) {
+    try {
+      const secret = this.configService.get<string>('JWT_SECRET');
+      const payload = await this.jwtService.verifyAsync(refreshToken, { secret });
+      
+      // Générer de nouveaux tokens
+      return this.generateTokens(payload.sub, payload.role);
+    } catch (e) {
+      throw new UnauthorizedException('Refresh token invalide ou expiré');
+    }
   }
 
   /**

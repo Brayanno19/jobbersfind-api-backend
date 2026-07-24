@@ -1,10 +1,13 @@
-import { Controller, Post, Body, HttpCode, HttpStatus } from '@nestjs/common';
+import { Controller, Post, Delete, Body, HttpCode, HttpStatus, UseGuards } from '@nestjs/common';
 import { AuthArtisanService } from '../services/auth-artisan.service';
 import { RegisterArtisanDto } from '../dto/register-artisan.dto';
 import { LoginDto } from '../dto/login.dto';
 import { VerifyOtpDto, ResendOtpDto } from '../dto/verify-otp.dto';
 import { ForgotPasswordDto } from '../dto/forgot-password.dto';
 import { ResetPasswordDto } from '../dto/reset-password.dto';
+import { DeleteAccountDto } from '../dto/delete-account.dto';
+import { JwtAuthGuard } from '../guards/roles.guard';
+import { GetUser } from '../decorators/get-user.decorator';
 
 @Controller('auth/artisan')
 export class AuthArtisanController {
@@ -60,5 +63,15 @@ export class AuthArtisanController {
   @Post('reset-password')
   async resetPassword(@Body() dto: ResetPasswordDto) {
     return this.authArtisanService.resetPassword(dto);
+  }
+
+  /**
+   * Endpoint pour supprimer son compte
+   */
+  @UseGuards(JwtAuthGuard)
+  @HttpCode(HttpStatus.OK)
+  @Delete('account')
+  async deleteAccount(@GetUser('id') userId: string, @Body() dto: DeleteAccountDto) {
+    return this.authArtisanService.deleteAccount(userId, dto);
   }
 }

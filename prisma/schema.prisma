@@ -206,9 +206,25 @@ model Notification {
   userRole String // CLIENT, ARTISAN
   title    String
   body     String
+  type     String  @default("system") // system, message, review, announcement
   isRead   Boolean @default(false)
 
   createdAt DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// HISTORIQUE DES DIFFUSIONS (Broadcasts Admin)
+// ---------------------------------------------------------------------------
+model BroadcastLog {
+  id         String   @id @default(uuid())
+  adminId    String
+  targetRole String   // ALL, CLIENT, ARTISAN
+  title      String
+  body       String
+  type       String   @default("system")
+  sentCount  Int      @default(0)
+
+  createdAt  DateTime @default(now())
 }
 
 // ---------------------------------------------------------------------------
@@ -326,4 +342,17 @@ model SearchHistory {
   client ClientUser @relation(fields: [clientId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// SUPPRESSION DE COMPTE
+// ---------------------------------------------------------------------------
+model AccountDeletionRequest {
+  id          String    @id @default(uuid())
+  userId      String
+  userRole    String    // CLIENT, ARTISAN
+  reason      String?
+  status      String    @default("COMPLETED") // PENDING, COMPLETED
+  requestedAt DateTime  @default(now())
+  completedAt DateTime?
 }

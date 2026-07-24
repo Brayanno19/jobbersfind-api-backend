@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, Body, UseGuards, Request, Post, UseInterceptors, UploadedFile, BadRequestException, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Patch, Body, UseGuards, Request, Post, UseInterceptors, UploadedFile, BadRequestException, Param, Delete, ParseFilePipe, MaxFileSizeValidator, FileTypeValidator } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ArtisansService } from './artisans.service';
 import { UpdateArtisanDto } from './dto/update-artisan.dto';
@@ -33,7 +33,14 @@ export class ArtisansController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadAvatar(
     @Request() req,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile(
+      new ParseFilePipe({
+        validators: [
+          new MaxFileSizeValidator({ maxSize: 2 * 1024 * 1024 }), // 2MB
+          new FileTypeValidator({ fileType: '.(png|jpeg|jpg)' }),
+        ],
+      }),
+    ) file: Express.Multer.File,
   ) {
     if (!file) throw new BadRequestException('Fichier image manquant');
     const avatarUrl = await this.uploadsService.uploadFile(file, 'jobbersfind/avatars');
@@ -44,7 +51,13 @@ export class ArtisansController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadDocument(
     @Request() req,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile(
+      new ParseFilePipe({
+        validators: [
+          new MaxFileSizeValidator({ maxSize: 2 * 1024 * 1024 }), // 2MB
+        ],
+      }),
+    ) file: Express.Multer.File,
     @Body('type') type: string, // ex: ID_CARD, PASSPORT, DIPLOMA, CERTIFICATE
   ) {
     if (!file) throw new BadRequestException('Fichier manquant');
@@ -56,7 +69,14 @@ export class ArtisansController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadVideo(
     @Request() req,
-    @UploadedFile() file: Express.Multer.File,
+    @UploadedFile(
+      new ParseFilePipe({
+        validators: [
+          new MaxFileSizeValidator({ maxSize: 20 * 1024 * 1024 }), // 20MB
+          new FileTypeValidator({ fileType: 'video/.*' }),
+        ],
+      }),
+    ) file: Express.Multer.File,
     @Body('type') type: string, // ex: PRESENTATION, PORTFOLIO
   ) {
     if (!file) throw new BadRequestException('Fichier manquant');

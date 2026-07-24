@@ -7,6 +7,7 @@ import { LoginDto } from '../dto/login.dto';
 import { VerifyOtpDto, ResendOtpDto } from '../dto/verify-otp.dto';
 import { ForgotPasswordDto } from '../dto/forgot-password.dto';
 import { ResetPasswordDto } from '../dto/reset-password.dto';
+import { DeleteAccountDto } from '../dto/delete-account.dto';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -297,5 +298,41 @@ export class AuthClientService {
     });
 
     return { message: 'Mot de passe réinitialisé avec succès' };
+  }
+
+  /**
+   * Suppression du compte client
+   */
+  async deleteAccount(userId: string, dto: DeleteAccountDto) {
+    const client = await this.prisma.clientUser.findUnique({
+      where: { id: userId }
+    });
+
+    if (!client) {
+      throw new UnauthorizedException('Utilisateur introuvable');
+    }
+
+    const isPasswordValid = await bcrypt.compare(dto.password, client.password);
+    if (!isPasswordValid) {
+      throw new UnauthorizedException('Mot de passe incorrect');
+    }
+
+    // Créer la demande de suppression pour historique (audit)
+    await this.prisma.accountDeletionRequest.create({
+      data: {
+        userId: client.id,
+        userRole: 'CLIENT',
+        reason: dto.reason,
+      }
+    });
+
+    // Supprimer l'utilisateur. La contrainte onDelete: Cascade va supprimer les reviews, chatrooms, etc.
+    await this.prisma.clientUser.delete({
+      where: { id: client.id }
+    });
+
+    this.logger.log(`Compte client supprimé : ${client.id}`);
+
+    return { message: 'Compte supprimé avec succès' };
   }
 }

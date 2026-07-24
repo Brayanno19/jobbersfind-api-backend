@@ -1,10 +1,13 @@
-import { Controller, Post, Body, HttpCode, HttpStatus } from '@nestjs/common';
+import { Controller, Post, Delete, Body, HttpCode, HttpStatus, UseGuards } from '@nestjs/common';
 import { AuthClientService } from '../services/auth-client.service';
 import { RegisterClientDto } from '../dto/register-client.dto';
 import { LoginDto } from '../dto/login.dto';
 import { VerifyOtpDto, ResendOtpDto } from '../dto/verify-otp.dto';
 import { ForgotPasswordDto } from '../dto/forgot-password.dto';
 import { ResetPasswordDto } from '../dto/reset-password.dto';
+import { DeleteAccountDto } from '../dto/delete-account.dto';
+import { JwtAuthGuard } from '../guards/roles.guard';
+import { GetUser } from '../decorators/get-user.decorator';
 
 @Controller('auth/client')
 export class AuthClientController {
@@ -60,5 +63,15 @@ export class AuthClientController {
   @Post('reset-password')
   async resetPassword(@Body() dto: ResetPasswordDto) {
     return this.authClientService.resetPassword(dto);
+  }
+
+  /**
+   * Endpoint pour supprimer son compte
+   */
+  @UseGuards(JwtAuthGuard)
+  @HttpCode(HttpStatus.OK)
+  @Delete('account')
+  async deleteAccount(@GetUser('id') userId: string, @Body() dto: DeleteAccountDto) {
+    return this.authClientService.deleteAccount(userId, dto);
   }
 }

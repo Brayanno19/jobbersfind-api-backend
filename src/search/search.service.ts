@@ -117,6 +117,9 @@ export class SearchService {
         },
         services: true,
         portfolio: true,
+        posts: {
+          orderBy: { createdAt: 'desc' }
+        },
       }
     });
 
