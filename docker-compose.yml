@@ -8,7 +8,7 @@ services:
     container_name: workplace_api
     restart: always
     ports:
-      - '5000:3000'
+      - '5000:5000'
     env_file:
       - .env
     environment:
@@ -36,7 +36,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}" ]
       interval: 5s
       timeout: 5s
       retries: 5
