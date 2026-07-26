@@ -41,6 +41,6 @@ COPY --from=builder /usr/src/app/dist ./dist
 # Exposer le port (par défaut 3000 pour NestJS, peut être défini via .env)
 EXPOSE 3000
 
-# Commande pour démarrer l'application (assurez-vous d'avoir prisma db push ou migrate deploy lors de l'init si besoin)
-CMD ["node", "dist/src/main"]
+# Commande pour démarrer l'application avec application automatique des changements Prisma (car pas de dossier migrations)
+CMD ["sh", "-c", "npx prisma db push --accept-data-loss && node dist/src/main"]
 
