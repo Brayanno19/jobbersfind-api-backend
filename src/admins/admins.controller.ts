@@ -15,9 +15,11 @@ export class AdminsController {
   @Get('clients')
   getClients(
     @Query('page') page: string = '1',
-    @Query('limit') limit: string = '10'
+    @Query('limit') limit: string = '10',
+    @Query('search') search?: string,
+    @Query('status') status?: string
   ) {
-    return this.adminsService.getClients(+page, +limit);
+    return this.adminsService.getClients(+page, +limit, search, status);
   }
 
   @Patch('clients/:id/status')
@@ -31,9 +33,12 @@ export class AdminsController {
   @Get('artisans')
   getArtisans(
     @Query('page') page: string = '1',
-    @Query('limit') limit: string = '10'
+    @Query('limit') limit: string = '10',
+    @Query('search') search?: string,
+    @Query('status') status?: string,
+    @Query('isVerified') isVerified?: string
   ) {
-    return this.adminsService.getArtisans(+page, +limit);
+    return this.adminsService.getArtisans(+page, +limit, search, status, isVerified);
   }
 
   @Patch('artisans/:id/status')
@@ -42,6 +47,35 @@ export class AdminsController {
     @Body('isActive') isActive: boolean
   ) {
     return this.adminsService.updateArtisanStatus(id, isActive);
+  }
+
+  @Get('artisans/:id')
+  getArtisanFullProfile(@Param('id') id: string) {
+    return this.adminsService.getArtisanFullProfile(id);
+  }
+
+  @Get('artisans/:id/posts')
+  getArtisanPosts(
+    @Param('id') id: string,
+    @Query('page') page: string = '1',
+    @Query('limit') limit: string = '10'
+  ) {
+    return this.adminsService.getArtisanPosts(id, +page, +limit);
+  }
+
+  @Delete('posts/:postId')
+  deletePost(@Param('postId') postId: string) {
+    return this.adminsService.deletePost(postId);
+  }
+
+  @Patch('artisans/:id/unlock-dossier')
+  unlockArtisanDossier(@Param('id') id: string) {
+    return this.adminsService.unlockArtisanDossier(id);
+  }
+
+  @Delete('documents/:docId')
+  deleteDocument(@Param('docId') docId: string) {
+    return this.adminsService.deleteDocument(docId);
   }
   // --- CATEGORIES (JobDomain) ---
   @Get('categories')

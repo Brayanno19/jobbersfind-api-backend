@@ -98,10 +98,24 @@ export class AdminsService {
   /**
    * Liste des clients avec pagination
    */
-  async getClients(page = 1, limit = 10) {
+  async getClients(page = 1, limit = 10, search?: string, status?: string) {
     const skip = (page - 1) * limit;
+
+    const where: any = {};
+    if (search) {
+      where.OR = [
+        { firstName: { contains: search, mode: 'insensitive' } },
+        { lastName: { contains: search, mode: 'insensitive' } },
+        { email: { contains: search, mode: 'insensitive' } },
+      ];
+    }
+    if (status) {
+      where.isActive = status === 'active';
+    }
+
     const [data, total] = await Promise.all([
       this.prisma.clientUser.findMany({
+        where,
         skip,
         take: limit,
         orderBy: { createdAt: 'desc' },
@@ -115,7 +129,7 @@ export class AdminsService {
           createdAt: true
         }
       }),
-      this.prisma.clientUser.count()
+      this.prisma.clientUser.count({ where })
     ]);
 
     return {
@@ -141,10 +155,28 @@ export class AdminsService {
   /**
    * Liste des artisans avec pagination
    */
-  async getArtisans(page = 1, limit = 10) {
+  async getArtisans(page = 1, limit = 10, search?: string, status?: string, isVerified?: string) {
     const skip = (page - 1) * limit;
+
+    const where: any = {};
+    if (search) {
+      where.OR = [
+        { firstName: { contains: search, mode: 'insensitive' } },
+        { lastName: { contains: search, mode: 'insensitive' } },
+        { companyName: { contains: search, mode: 'insensitive' } },
+        { email: { contains: search, mode: 'insensitive' } },
+      ];
+    }
+    if (status) {
+      where.isActive = status === 'active';
+    }
+    if (isVerified) {
+      where.isVerified = isVerified === 'true';
+    }
+
     const [data, total] = await Promise.all([
       this.prisma.artisanUser.findMany({
+        where,
         skip,
         take: limit,
         orderBy: { createdAt: 'desc' },
@@ -162,7 +194,7 @@ export class AdminsService {
           createdAt: true
         }
       }),
-      this.prisma.artisanUser.count()
+      this.prisma.artisanUser.count({ where })
     ]);
 
     return {
@@ -279,5 +311,89 @@ export class AdminsService {
 
     return { success: true, count: notifications.length, message: 'Notifications envoyées avec succès' };
   }
-}
 
+  /**
+   * --- ARTISAN 360° PROFILE ---
+   */
+  async getArtisanFullProfile(id: string) {
+    const artisan = await this.prisma.artisanUser.findUnique({
+      where: { id },
+      include: {
+        domains: true,
+        documents: {
+          orderBy: { uploadedAt: 'desc' }
+        },
+        videos: {
+          orderBy: { uploadedAt: 'desc' }
+        },
+        services: true,
+        portfolio: true,
+        reviews: {
+          take: 5,
+          orderBy: { createdAt: 'desc' },
+          include: {
+            client: { select: { id: true, firstName: true, lastName: true, avatarUrl: true } }
+          }
+        },
+        _count: {
+          select: {
+            posts: true,
+            reviews: true,
+            services: true,
+            portfolio: true
+          }
+        }
+      }
+    });
+
+    if (!artisan) throw new NotFoundException('Artisan non trouvé');
+    return artisan;
+  }
+
+  async getArtisanPosts(id: string, page = 1, limit = 10) {
+    const skip = (page - 1) * limit;
+    const [data, total] = await Promise.all([
+      this.prisma.post.findMany({
+        where: { artisanId: id },
+        skip,
+        take: limit,
+        orderBy: { createdAt: 'desc' }
+      }),
+      this.prisma.post.count({ where: { artisanId: id } })
+    ]);
+
+    return {
+      data,
+      meta: { total, page, limit, totalPages: Math.ceil(total / limit) }
+    };
+  }
+
+  async deletePost(postId: string) {
+    await this.prisma.post.delete({
+      where: { id: postId }
+    });
+    return { success: true, message: 'Publication supprimée avec succès' };
+  }
+
+  async unlockArtisanDossier(id: string) {
+    // Supprime tous les documents
+    await this.prisma.artisanDocument.deleteMany({
+      where: { artisanId: id }
+    });
+    
+    // Remet isVerified à false
+    await this.prisma.artisanUser.update({
+      where: { id },
+      data: { isVerified: false }
+    });
+
+    return { success: true, message: 'Dossier débloqué, documents supprimés et statut réinitialisé.' };
+  }
+
+  async deleteDocument(docId: string) {
+    await this.prisma.artisanDocument.delete({
+      where: { id: docId }
+    });
+    return { success: true, message: 'Document supprimé avec succès' };
+  }
+}
