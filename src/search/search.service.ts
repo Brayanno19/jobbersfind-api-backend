@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../common/prisma.service';
 import { SearchQueryDto } from './dto/search-query.dto';
 import { extractTokens } from './utils/nlp.util';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class SearchService {
@@ -9,7 +10,7 @@ export class SearchService {
 
   async searchArtisans(dto: SearchQueryDto) {
     const { query, latitude, longitude, radius = 10 } = dto;
-    const tokens = extractTokens(query);
+    const tokens = extractTokens(query || "");
 
     // 1. NLP : Trouver les domaines correspondants aux mots-clés dans la DB
     const matchedDomains = await this.prisma.searchKeyword.findMany({
@@ -20,8 +21,6 @@ export class SearchService {
     });
 
     const domainIds = [...new Set(matchedDomains.map(d => d.domainId))];
-
-    import { Prisma } from '@prisma/client';
 
     const hasLocation = latitude != null && longitude != null;
     const hasQuery = tokens.length > 0;
