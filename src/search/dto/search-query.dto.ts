@@ -1,20 +1,20 @@
-import { IsNotEmpty, IsNumber, IsOptional, IsString, Min } from 'class-validator';
+import { IsNumber, IsOptional, IsString, Min } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class SearchQueryDto {
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  query: string;
+  query?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @Type(() => Number)
   @IsNumber()
-  latitude: number;
+  latitude?: number;
 
-  @IsNotEmpty()
+  @IsOptional()
   @Type(() => Number)
   @IsNumber()
-  longitude: number;
+  longitude?: number;
 
   @IsOptional()
   @Type(() => Number)

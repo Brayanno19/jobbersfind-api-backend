@@ -21,24 +21,39 @@ export class SearchService {
 
     const domainIds = [...new Set(matchedDomains.map(d => d.domainId))];
 
-    // 2. RAW SQL : Trouver les artisans à proximité (Haversine formula comme fallback robuste si PostGIS n'est pas dispo)
-    // 6371 correspond au rayon de la terre en km.
-    const artisansRaw: any[] = await this.prisma.$queryRaw`
-      SELECT 
-        a.id, a."firstName", a."lastName", a."companyName", a."averageRating", a."credibilityScore",
-        a.latitude, a.longitude, a.city, a.neighborhood, a."avatarUrl", a."phoneNumber",
-        ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( a.latitude ) ) 
-        * cos( radians( a.longitude ) - radians(${longitude}) ) 
-        + sin( radians(${latitude}) ) * sin( radians( a.latitude ) ) ) ) AS distance
-      FROM "ArtisanUser" a
-      WHERE a."isVerified" = true
-      AND a."isActive" = true
-      AND a.latitude IS NOT NULL
-      AND a.longitude IS NOT NULL
-      AND ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( a.latitude ) ) 
-        * cos( radians( a.longitude ) - radians(${longitude}) ) 
-        + sin( radians(${latitude}) ) * sin( radians( a.latitude ) ) ) ) <= ${radius}
-    `;
+    import { Prisma } from '@prisma/client';
+
+    const hasLocation = latitude != null && longitude != null;
+    const hasQuery = tokens.length > 0;
+
+    let whereClause = Prisma.sql`WHERE a."isVerified" = true AND a."isActive" = true`;
+    
+    // Si pas de requête textuelle, on limite strictement au rayon pour ne pas renvoyer toute la base de données
+    if (!hasQuery && hasLocation) {
+       whereClause = Prisma.sql`${whereClause} AND a.latitude IS NOT NULL AND a.longitude IS NOT NULL AND ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( a.latitude ) ) * cos( radians( a.longitude ) - radians(${longitude}) ) + sin( radians(${latitude}) ) * sin( radians( a.latitude ) ) ) ) <= ${radius}`;
+    }
+
+    const querySql = hasLocation 
+      ? Prisma.sql`
+          SELECT 
+            a.id, a."firstName", a."lastName", a."companyName", a."averageRating", a."credibilityScore",
+            a.latitude, a.longitude, a.city, a.neighborhood, a."avatarUrl", a."phoneNumber",
+            ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( a.latitude ) ) 
+            * cos( radians( a.longitude ) - radians(${longitude}) ) 
+            + sin( radians(${latitude}) ) * sin( radians( a.latitude ) ) ) ) AS distance
+          FROM "ArtisanUser" a
+          ${whereClause}
+        `
+      : Prisma.sql`
+          SELECT 
+            a.id, a."firstName", a."lastName", a."companyName", a."averageRating", a."credibilityScore",
+            a.latitude, a.longitude, a.city, a.neighborhood, a."avatarUrl", a."phoneNumber",
+            NULL AS distance
+          FROM "ArtisanUser" a
+          ${whereClause}
+        `;
+
+    const artisansRaw: any[] = await this.prisma.$queryRaw(querySql);
 
     if (!artisansRaw.length) return [];
 
@@ -58,36 +73,45 @@ export class SearchService {
     let results = artisansRaw.map(artisan => {
       let score = 0;
 
-      // --- 40% Score Métier ---
       const artisanDomains = artisansWithDomains.find(ad => ad.id === artisan.id)?.domains || [];
       const artisanDomainIds = artisanDomains.map(d => d.id);
       
       const matchMetier = artisanDomainIds.some(id => domainIds.includes(id));
-      if (matchMetier) {
-        score += 40;
-      } else if (domainIds.length === 0 && tokens.length === 0) {
-        // Si requête vide, on donne la moyenne pour éviter de pénaliser inutilement
-        score += 20; 
+      const nameMatch = hasQuery && tokens.some(t => 
+        (artisan.firstName && artisan.firstName.toLowerCase().includes(t.toLowerCase())) || 
+        (artisan.lastName && artisan.lastName.toLowerCase().includes(t.toLowerCase())) ||
+        (artisan.companyName && artisan.companyName.toLowerCase().includes(t.toLowerCase()))
+      );
+
+      // --- Filtre Strict si Requête ---
+      if (hasQuery) {
+        if (!matchMetier && !nameMatch) {
+          return null; // Ne correspond ni au métier ni au nom
+        }
+        score += 40; // Correspondance trouvée !
+      } else {
+        score += 40; // Pas de requête : score métier max pour tout le monde
       }
-      
-      // Filtre Strict : Si on cherchait un métier précis, et que cet artisan ne l'a pas, 
-      // on peut soit le garder avec un score faible, soit le filtrer. 
-      // Pour l'instant on le garde, mais il sera mal classé.
 
       // --- 30% Score Distance ---
-      const dist = artisan.distance || 0;
-      // Plus c'est proche de 0, plus on a de points (max 30)
-      const distanceScore = Math.max(0, 30 * (1 - (dist / radius)));
-      score += distanceScore;
+      const dist = artisan.distance;
+      if (dist != null) {
+        if (dist <= radius) {
+          const distanceScore = Math.max(0, 30 * (1 - (dist / radius)));
+          score += distanceScore;
+        } else {
+          score += 0; // Au delà du rayon, score de distance nul mais on le garde s'il a le métier
+        }
+      } else {
+        score += 15; // Valeur moyenne si pas de GPS
+      }
 
       // --- 20% Score Crédibilité ---
-      // Supposons que credibilityScore base est 500, max raisonnable ~1000
       const cred = artisan.credibilityScore || 500;
       const credScore = Math.min(20, (cred / 1000) * 20);
       score += credScore;
 
       // --- 10% Score Activité ---
-      // Bonus fixe pour l'instant (sera dynamique quand on aura des logs de connexion)
       score += 10; 
 
       return {
@@ -95,13 +119,10 @@ export class SearchService {
         domains: artisanDomains,
         globalScore: Math.round(score),
       };
-    });
-
-    // Filtre optionnel : on ne garde que ceux qui ont au moins 20 points
-    results = results.filter(r => r.globalScore >= 20);
+    }).filter(r => r !== null); // Supprimer les artisans qui ne matchent pas la requête
 
     // Tri décroissant
-    return results.sort((a, b) => b.globalScore - a.globalScore);
+    return results.sort((a, b) => b!.globalScore - a!.globalScore);
   }
 
   async getArtisanProfileById(id: string) {
