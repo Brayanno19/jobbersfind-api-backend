@@ -1,0 +1,4002 @@
+[
+  {
+    "id": 1,
+    "metier": "Planteur moderne de cacao",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Très Élevée",
+    "description": "Production et régénération de vergers cacaoyers avec techniques agroforestières modernes."
+  },
+  {
+    "id": 2,
+    "metier": "Producteur de café Arabica/Robusta",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Culture, récolte et traitement post-récolte de caféiers de haute qualité."
+  },
+  {
+    "id": 3,
+    "metier": "Tuteur / Technicien en hévéaculture",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Saignée et entretien des plantations d'hévéa pour la production de latex."
+  },
+  {
+    "id": 4,
+    "metier": "Pisciculteur en bacs sol et étangs",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Élevage de poissons d'eau douce (Tilapia, Kanga, Silure) pour l'approvisionnement local."
+  },
+  {
+    "id": 5,
+    "metier": "Aviculteur (Éleveur de volailles)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BAC",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion de fermes avicoles de poulets de chair et de poules pondeuses."
+  },
+  {
+    "id": 6,
+    "metier": "Machiniste agricole / Conducteur de tracteur",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Conduite, entretien et exploitation des machines et équipements de travail du sol."
+  },
+  {
+    "id": 7,
+    "metier": "Technicien de transformation du manioc",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Transformation du manioc en bâton, tapioca, farine panifiable et amidon industriel."
+  },
+  {
+    "id": 8,
+    "metier": "Technicien de transformation du maïs et céréales",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Production de farines, provendes et dérivés céréaliers."
+  },
+  {
+    "id": 9,
+    "metier": "Ingénieur agronome - Spécialiste cultures maraîchères",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Très Élevée",
+    "description": "Optimisation des rendements de tomate, piment, oignon et légumes de grande consommation."
+  },
+  {
+    "id": 10,
+    "metier": "Éleveur de porcs (Porciculteur)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BAC",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion de cheptel porcin, reproduction, hygiène et engraissement."
+  },
+  {
+    "id": 11,
+    "metier": "Éleveur de petits ruminants (Moutons et Chèvres)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Élevage extensif et semi-intensif en zones sahélienne et de savane."
+  },
+  {
+    "id": 12,
+    "metier": "Technicien en insémination artificielle animale",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Amélioration génétique des bovins et porcins par insémination."
+  },
+  {
+    "id": 13,
+    "metier": "Contrôleur qualité agroalimentaire",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Vérification des normes d'hygiène et de sécurité sanitaire des aliments."
+  },
+  {
+    "id": 14,
+    "metier": "Spécialiste en conservation post-récolte",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Réduction des pertes post-récolte grâce au stockage et au séchage contrôlés."
+  },
+  {
+    "id": 15,
+    "metier": "Concepteur de systèmes d'irrigation goutte-à-goutte",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Installation et maintenance de réseaux d'irrigation efficaces en eau."
+  },
+  {
+    "id": 16,
+    "metier": "Arboriculteur fruitière (Avocat, Mangue, Papaye)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Création et gestion de vergers fruitiers pour le marché local et l'exportation."
+  },
+  {
+    "id": 17,
+    "metier": "Ananasculteur",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BAC",
+    "niveau_demande": "Élevée",
+    "description": "Production intensive d'ananas de variété Smooth Cayenne et MD2."
+  },
+  {
+    "id": 18,
+    "metier": "Bananiculteur et plantainiculteur",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Multiplication par PIF (Plants Issus de Fragments) et culture de banane plantain."
+  },
+  {
+    "id": 19,
+    "metier": "Technicien en production de champignons (Myliculture)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Substrats et culture de pleurotes et champignons comestibles."
+  },
+  {
+    "id": 20,
+    "metier": "Apiculteur et producteur de miel",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des ruches modernes, extraction et filtration du miel pur."
+  },
+  {
+    "id": 21,
+    "metier": "Éleveur de bovins laitier",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Gestion de troupeaux laitiers et collecte du lait frais."
+  },
+  {
+    "id": 22,
+    "metier": "Technicien de transformation laitière (Yaourt, Fromage)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Pasteurisation du lait et fabrication de yaourts et fromages locaux."
+  },
+  {
+    "id": 23,
+    "metier": "Conseiller en gestion d'exploitations agricoles",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Accompagnement financier et organisationnel des coopératives agricoles."
+  },
+  {
+    "id": 24,
+    "metier": "Technicien d'entretien des serres agricoles",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Gestion des paramètres climatiques et sanitaires sous serre."
+  },
+  {
+    "id": 25,
+    "metier": "Pépiniériste certifié",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Production de plants greffés et certifiés de cacao, d'arbres fruitiers et palmiers."
+  },
+  {
+    "id": 26,
+    "metier": "Cultivateur de palmier à huile",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BAC",
+    "niveau_demande": "Très Élevée",
+    "description": "Exploitation de palmeraies et extraction artisanale ou semi-industrielle d'huile de palme."
+  },
+  {
+    "id": 27,
+    "metier": "Opérateur de presse à huile végétale",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Extraction et clarification d'huile de palme, de palmiste, de coton et de soja."
+  },
+  {
+    "id": 28,
+    "metier": "Ingénieur agro-économiste",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Études de filières, analyse des marchés et valorisation des produits agricoles."
+  },
+  {
+    "id": 29,
+    "metier": "Spécialiste de la défense des cultures (Phytosanitaire)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Traitements écologiques et bio-agresseurs des cultures."
+  },
+  {
+    "id": 30,
+    "metier": "Technicien de séchage de cacao et café",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Élevée",
+    "description": "Maîtrise des taux d'humidité et séchage solaire contrôlé des fèves."
+  },
+  {
+    "id": 31,
+    "metier": "Producteur de cultures maraîchères de contre-saison",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Production d'oignons et tomates dans les bas-fonds pendant la saison sèche."
+  },
+  {
+    "id": 32,
+    "metier": "Technicien de provenderie",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Formulation et fabrication d'aliments équilibrés pour volailles, porcs et poissons."
+  },
+  {
+    "id": 33,
+    "metier": "Transformateur d'épices locales (Pèbè, Penja, Akpi)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Nettoyage, séchage, conditionnement et emballage d'épices pour le marché local et export."
+  },
+  {
+    "id": 34,
+    "metier": "Producteur de riz de bas-fond",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BAC",
+    "niveau_demande": "Très Élevée",
+    "description": "Aménagement des rizières, repiquage et moisson de riz paddy."
+  },
+  {
+    "id": 35,
+    "metier": "Opérateur d'unité de décorticage de riz",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Usinage, nettoyage et ensachage du riz blanc local."
+  },
+  {
+    "id": 36,
+    "metier": "Sériciculteur et apiculteur intégré",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Diversification des revenus agricoles par l'apiculture et le vers à soie."
+  },
+  {
+    "id": 37,
+    "metier": "Spécialiste en vermicompostage",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Production d'engrais organique biologique à partir de déjections et déchets verts."
+  },
+  {
+    "id": 38,
+    "metier": "Technicien biologiste en micropropagation végétale",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Culture in vitro de plantains, ignames et tubercules sains."
+  },
+  {
+    "id": 39,
+    "metier": "Cultivateur de macabo et taro",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Production et lutte contre le mildiou des aracées."
+  },
+  {
+    "id": 40,
+    "metier": "Producteur d'igname et patate douce",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BAC",
+    "niveau_demande": "Élevée",
+    "description": "Techniques d'ensevelissement et conservation sous paille."
+  },
+  {
+    "id": 41,
+    "metier": "Pêcheur artisanal maritime et continental",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Capture durable de poissons le long de la côte et dans les retenues d'eau."
+  },
+  {
+    "id": 42,
+    "metier": "Fumeur / Conservateur de poisson",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Séchage et fumage hygiénique de poisson avec fumoirs améliorés."
+  },
+  {
+    "id": 43,
+    "metier": "Technicien en réparation de filets de pêche",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Moyenne",
+    "description": "Confection et raccommodage des engins de pêche."
+  },
+  {
+    "id": 44,
+    "metier": "Mécanicien de moteurs hors-bord",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Entretien et réparation des moteurs de pirogues de pêche et transport fluvial."
+  },
+  {
+    "id": 45,
+    "metier": "Éleveur de lapins (Cuniculiculteur)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BAC",
+    "niveau_demande": "Moyenne",
+    "description": "Élevage intensif de lapins pour la viande à haute valeur protéique."
+  },
+  {
+    "id": 46,
+    "metier": "Éleveur d'aulacodes (Hérissons de culture)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Domestications et élevage du gibier d'élevage."
+  },
+  {
+    "id": 47,
+    "metier": "Technicien de séchage de fruits (Mangue, Banane)",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Valorisation des surplus de fruits par déshydratation."
+  },
+  {
+    "id": 48,
+    "metier": "Transformateur de noix de cajou",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Décorticage, torréfaction et emballage des amandes de cajou."
+  },
+  {
+    "id": 49,
+    "metier": "Producteur de sésame et soja",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BAC",
+    "niveau_demande": "Élevée",
+    "description": "Culture d'oléagineux adaptés aux zones septentrionales."
+  },
+  {
+    "id": 50,
+    "metier": "Conseiller en bio-pesticides et fertilité du sol",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Formulation d'extraits botaniques pour la protection biologique des cultures."
+  },
+  {
+    "id": 51,
+    "metier": "Gestionnaire de magasin de stockage céréalier",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des stocks stratégiques de maïs, sorgho et mild dans le Grand Nord."
+  },
+  {
+    "id": 52,
+    "metier": "Technicien en emballage agroalimentaire",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Choix et emballage sous vide ou étanche pour étendre la conservation."
+  },
+  {
+    "id": 53,
+    "metier": "Ingénieur du génie rural",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Très Élevée",
+    "description": "Conception de barrages de retenue d'eau, pistes rurales et bassins de versant."
+  },
+  {
+    "id": 54,
+    "metier": "Opérateur de tri de grains et céréales",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Nettoyage et calibrage automatique des récoltes."
+  },
+  {
+    "id": 55,
+    "metier": "Transformateur de beurre de karité",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Extraction traditionnelle et semi-industrielle de karité pur."
+  },
+  {
+    "id": 56,
+    "metier": "Cultivateur de moringa et plantes médicinales",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Culture, séchage des feuilles et conditionnement en poudre."
+  },
+  {
+    "id": 57,
+    "metier": "Technicien en insémination avicole",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Reproduction contrôlée des souches parentales en élevage avicole."
+  },
+  {
+    "id": 58,
+    "metier": "Gestionnaire d'abattoir moderne",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Chaîne du froid, découpe et hygiène des carcasses de viande."
+  },
+  {
+    "id": 59,
+    "metier": "Boucher / Découpeur de viandes",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Préparation, découpe hygiénique et présentation des viandes."
+  },
+  {
+    "id": 60,
+    "metier": "Opérateur de biodesteur de lisier",
+    "secteur": "Agriculture, Élevage et Agro-industrie",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Valorisation des déjections animales en gaz ménager et engrais liquide."
+  },
+  {
+    "id": 61,
+    "metier": "Maçon coffreur / Ferrailleur",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Montage de structures en béton armé, ferraillage et coffrage de dalles et poteaux."
+  },
+  {
+    "id": 62,
+    "metier": "Topographe de chantier BTP",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Levés topographiques, implantations d'ouvrages et relevés de terrain."
+  },
+  {
+    "id": 63,
+    "metier": "Ingénieur calcul de structures béton et métal",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Très Élevée",
+    "description": "Dimensionnement des bâtiments, ponts et structures résistant aux séismes et à la charge."
+  },
+  {
+    "id": 64,
+    "metier": "Conducteur d'engins lourds (Pelle, Bulldozer, Leveler)",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Terrassement, excavation et nivellement pour projets routiers et immobiliers."
+  },
+  {
+    "id": 65,
+    "metier": "Électricien de bâtiment et tertiaire",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Câblage, pose de tableaux électriques et mise aux normes des installations."
+  },
+  {
+    "id": 66,
+    "metier": "Plombier sanitairiste et tuyauteur",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Installation des réseaux d'eau potable, évacuations et équipements sanitaires."
+  },
+  {
+    "id": 67,
+    "metier": "Soudeur qualifié d'ouvrages d'art et tuyauterie",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Soudure à l'arc, TIG/MIG sur charpentes métalliques et conduites forcées."
+  },
+  {
+    "id": 68,
+    "metier": "Chef de chantier BTP",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Coordination des équipes sur le terrain, suivi des délais et respect des plans."
+  },
+  {
+    "id": 69,
+    "metier": "Peintre façadier et applicateur de résine",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Préparation des surfaces, peinture intérieure/extérieure et étanchéité."
+  },
+  {
+    "id": 70,
+    "metier": "Carreleur / Mosaïste",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Pose de carrelage, grès cérame, marbre et dalles sur sols et murs."
+  },
+  {
+    "id": 71,
+    "metier": "Spécialiste en étanchéité de toitures et terrasses",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Pose de membranes bitumineuses et étanchéité liquide contre les infiltrations d'eau."
+  },
+  {
+    "id": 72,
+    "metier": "Menuisier métallique et charpentier acier",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Fabrication et pose de portails, grilles de sécurité et charpentes métalliques."
+  },
+  {
+    "id": 73,
+    "metier": "Menuisier aluminium et miroiterie",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Confection et pose de baies vitrées, portes et façades en aluminium."
+  },
+  {
+    "id": 74,
+    "metier": "Menuisier bois et parqueteur",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Confection des portes bois, placards encastrés et pose de parquet."
+  },
+  {
+    "id": 75,
+    "metier": "Ingénieur mécanicien des sols (Géotechnicien)",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Essais de sol, sondages et études de fondations pour bâtiments et routes."
+  },
+  {
+    "id": 76,
+    "metier": "Conducteur de travaux routiers (VRD)",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Ingénieur",
+    "niveau_demande": "Très Élevée",
+    "description": "Supervision de la construction des voies d'accès, bitumage et pavage."
+  },
+  {
+    "id": 77,
+    "metier": "Technicien d'essai en laboratoire BTP",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Essais sur le béton, enrobés bitumineux et compacité des sols."
+  },
+  {
+    "id": 78,
+    "metier": "Staffeur / Plâtrier pour faux plafonds",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Pose de plaques de plâtre (BA13), moulures et faux plafonds décoratifs."
+  },
+  {
+    "id": 79,
+    "metier": "Échafaudeur et monteur de structures temporaires",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Montage sécurisé d'échafaudages pour travaux en hauteur."
+  },
+  {
+    "id": 80,
+    "metier": "Installateur de climatisation et CVC bâtiment",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Dimensionnement et installation de climatiseurs split, centraux et VMC."
+  },
+  {
+    "id": 81,
+    "metier": "Métreur-vérificateur / Économiste de la construction",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Établissement des devis quantitatifs, devis estimatifs et métrés de chantier."
+  },
+  {
+    "id": 82,
+    "metier": "Dessinateur projeteur AutoCAD/Revit (BIM)",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Modélisation 2D/3D des plans d'architecture et de coffrage."
+  },
+  {
+    "id": 83,
+    "metier": "Architecte d'intérieur et designer d'espace",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Aménagement ergonomique et esthétique des espaces résidentiels et bureaux."
+  },
+  {
+    "id": 84,
+    "metier": "Poseur de pavés autobloquants",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Très Élevée",
+    "description": "Aménagement d'allées, cours et chaussées en pavés de béton."
+  },
+  {
+    "id": 85,
+    "metier": "Ingénieur hydraulique (AEP et Assainissement)",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Très Élevée",
+    "description": "Conception des réseaux de distribution d'eau potable et de drainage d'eaux pluviales."
+  },
+  {
+    "id": 86,
+    "metier": "Forgereon d'art et serrurier",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Fabrication de serrures, garde-corps et pièces en fer forgé."
+  },
+  {
+    "id": 87,
+    "metier": "Conducteur de grue à tour et crane operator",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CQP / Permis spécial",
+    "niveau_demande": "Élevée",
+    "description": "Manutention de charges lourdes sur les grands chantiers immobiliers."
+  },
+  {
+    "id": 88,
+    "metier": "Technicien en domotique et sécurité bâtiment",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Installation de contrôle d'accès, caméras IP et systèmes intelligents."
+  },
+  {
+    "id": 89,
+    "metier": "Spécialiste de la démolition et du curage",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Déconstruction sécurisée d'ouvrages anciens et recyclage des gravats."
+  },
+  {
+    "id": 90,
+    "metier": "Contrôleur technique de sécurité BTP",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Licence / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Vérification de la conformité des structures et de la sécurité des chantiers."
+  },
+  {
+    "id": 91,
+    "metier": "Façonneur de briques en terre stabilisée (BTS/BTC)",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CQP / CAP",
+    "niveau_demande": "Élevée",
+    "description": "Fabrication écologique de briques de terre comprimée pour la construction durable."
+  },
+  {
+    "id": 92,
+    "metier": "Opérateur de centrale à béton",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Fabrication et dosage automatisé des mélanges de béton de ciment."
+  },
+  {
+    "id": 93,
+    "metier": "Conducteur de toupie à béton (Malaxeur)",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Permis C / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Transport et livraison de béton frais sur le chantier."
+  },
+  {
+    "id": 94,
+    "metier": "Technicien réparateur d'engins de chantier",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Diagnostic et réparation mécanique/hydraulique des tractopelles et engins."
+  },
+  {
+    "id": 95,
+    "metier": "Installateur de piscine et bassins",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Terrassement, étanchéité et filtration pour bassins et piscines."
+  },
+  {
+    "id": 96,
+    "metier": "Paveur de routes et dallages",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Création des trottoirs et bordures en béton préfabriqué."
+  },
+  {
+    "id": 97,
+    "metier": "Technicien de forage d'eau sous-terraine",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Prospection, forage et équipement de puits d'eau potable."
+  },
+  {
+    "id": 98,
+    "metier": "Spécialiste en ravalement de façade",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Nettoyage, ponçage et traitement anti-moisissures des murs extérieurs."
+  },
+  {
+    "id": 99,
+    "metier": "Installateur de groupes électrogènes de chantier",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Câblage, automatisation et entretien des groupes électrogènes industriels."
+  },
+  {
+    "id": 100,
+    "metier": "Concepteur de maisons à ossature bois / bambou",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Licence / Ingénieur",
+    "niveau_demande": "Moyenne",
+    "description": "Construction d'ouvrages écologiques à partir de matériaux locaux."
+  },
+  {
+    "id": 101,
+    "metier": "Vérificateur d'échafaudages certifié",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Inspections périodiques de la stabilité des structures temporaires."
+  },
+  {
+    "id": 102,
+    "metier": "Vitreur d'immeuble et façades mur-rideau",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Pose de grands vitrages thermiques sur immeubles de grande hauteur."
+  },
+  {
+    "id": 103,
+    "metier": "Ingénieur OPC (Ordonnancement, Pilotage, Coordination)",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Planification des interventions des corps d'état architecturaux sur le chantier."
+  },
+  {
+    "id": 104,
+    "metier": "Technicien en diagnostic immobilier et fissures",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Analyse des désordres structuraux et préconisations de confortement."
+  },
+  {
+    "id": 105,
+    "metier": "Chef d'équipe ferraillage",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Lecture des plans d'armatures et encadrement des ferrailleurs."
+  },
+  {
+    "id": 106,
+    "metier": "Chef d'équipe coffrage bois et métallique",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Organisation du montage et du coulage des bétons."
+  },
+  {
+    "id": 107,
+    "metier": "Spécialiste en isolation thermique et phonique",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Pose d'isolants sous toiture et dans les cloisons pour réduire la chaleur."
+  },
+  {
+    "id": 108,
+    "metier": "Bétonneur / Lisseur d'hélicoptère",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Coulage et surfaçage lisse des dalles béton industrielles."
+  },
+  {
+    "id": 109,
+    "metier": "Ingénieur environnement pour chantiers BTP",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des impacts environnementaux et des déchets de chantier."
+  },
+  {
+    "id": 110,
+    "metier": "Technicien de signalisation routière",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Pose de panneaux de signalisation et marquage au sol des voies."
+  },
+  {
+    "id": 111,
+    "metier": "Monteur de pylônes et structures métalliques haut",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Assemblage en hauteur des pylônes télécom et lignes haute tension."
+  },
+  {
+    "id": 112,
+    "metier": "Opérateur de marteau-piqueur et brise-roche",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Déroctage et travaux de démolition rocheuse."
+  },
+  {
+    "id": 113,
+    "metier": "Canalisateur VRD",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Pose de tuyaux d'assainissement et réseaux d'eau dans les tranchées."
+  },
+  {
+    "id": 114,
+    "metier": "Opérateur de raboteuse d'enrobé routier",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Décapage des vieilles couches d'asphalte avant réfection."
+  },
+  {
+    "id": 115,
+    "metier": "Ingénieur d'affaires BTP",
+    "secteur": "BTP et Génie Civil",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Réponse aux appels d'offres publics/privés et suivi commercial des projets."
+  },
+  {
+    "id": 116,
+    "metier": "Installateur certifié de panneaux photovoltaïques",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Dimensionnement et installation de systèmes solaires hors-réseau et injectés."
+  },
+  {
+    "id": 117,
+    "metier": "Technicien de maintenance en énergie solaire",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Dépannage d'onduleurs, régulateurs et parcs de batteries solaires."
+  },
+  {
+    "id": 118,
+    "metier": "Électricien de réseau haute et moyenne tension",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Montage et entretien des lignes de distribution d'électricité."
+  },
+  {
+    "id": 119,
+    "metier": "Technicien de centrale hydroélectrique",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Surveillance des turbines, alternateurs et vannes de barrages."
+  },
+  {
+    "id": 120,
+    "metier": "Ingénieur en efficacité énergétique",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Audits énergétiques pour industries et bâtiments tertiaires."
+  },
+  {
+    "id": 121,
+    "metier": "Opérateur de production d'eau potable",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion des stations de traitement, coagulation, filtration et chloration."
+  },
+  {
+    "id": 122,
+    "metier": "Technicien analyste de la qualité de l'eau",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Prélèvements et analyses physico-chimiques et bactériologiques."
+  },
+  {
+    "id": 123,
+    "metier": "Technicien en biogaz et méthanisation",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Installation de biodigesteurs et valorisation du gaz de déchets."
+  },
+  {
+    "id": 124,
+    "metier": "Géologue de mine et de prospection",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Cartographie géologique, échantillonnage et évaluation des gisements."
+  },
+  {
+    "id": 125,
+    "metier": "Foreur minier et carotteur",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Conduite des sondages de recherche minière et extraction de carottes."
+  },
+  {
+    "id": 126,
+    "metier": "Opérateur d'usine de traitement des minerais",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Broyage, concassage et flottation des minerais (bauxite, fer, or)."
+  },
+  {
+    "id": 127,
+    "metier": "Ingénieur de mines",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Planning d'extraction, tir de mine et sécurité des exploitations minières."
+  },
+  {
+    "id": 128,
+    "metier": "Technicien pétrolier onshore / offshore",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Maintenance des équipements d'extraction et de séparation d'hydrocarbures."
+  },
+  {
+    "id": 129,
+    "metier": "Superviseur QHSE (Qualité, Hygiène, Sécurité, Environnement)",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Prévention des risques professionnels et conformité environnementale."
+  },
+  {
+    "id": 130,
+    "metier": "Technicien en froid industriel et chaîne du froid",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Installation et maintenance des entrepôts frigorifiques et centrales à froid."
+  },
+  {
+    "id": 131,
+    "metier": "Installateur de pompes à eau solaires",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Équipement de forages ruraux avec pompage photovoltaïque."
+  },
+  {
+    "id": 132,
+    "metier": "Technicien en détection de fuites d'eau réseau",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Recherche acoustique et corrélatoire des pertes d'eau sur réseaux."
+  },
+  {
+    "id": 133,
+    "metier": "Ingénieur énergies renouvelables",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Très Élevée",
+    "description": "Conception de projets hybrides (Solaire-Diesel-Biomasse)."
+  },
+  {
+    "id": 134,
+    "metier": "Technicien d'entretien de transformateurs électriques",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Vidange, analyse d'huile et bobinage des transformateurs."
+  },
+  {
+    "id": 135,
+    "metier": "Opérateur de four de fonderie",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Fusion de métaux pour fabrication de pièces mécaniques et tôles."
+  },
+  {
+    "id": 136,
+    "metier": "Spécialiste du gaz domestique (GPL) et tuyauterie",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Installation de centres d'emplissage et réseaux de gaz butane."
+  },
+  {
+    "id": 137,
+    "metier": "Technicien de sous-station électrique",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Manœuvre des disjoncteurs sectionneurs et protection des postes."
+  },
+  {
+    "id": 138,
+    "metier": "Géophysicien d'exploration",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Moyenne",
+    "description": "Acquisition et traitement des données sismiques et magnétiques."
+  },
+  {
+    "id": 139,
+    "metier": "Ingénieur chimiste du pétrole / Raffinerie",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Moyenne",
+    "description": "Contrôle des procédés de distillation et raffinage du pétrole brut."
+  },
+  {
+    "id": 140,
+    "metier": "Ingénieur environnement minier",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des résidus miniers et plans de réhabilitation des sites."
+  },
+  {
+    "id": 141,
+    "metier": "Artisan bijoutier fondeur d'or",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Test, fonte et façonnage de l'or et métaux précieux."
+  },
+  {
+    "id": 142,
+    "metier": "Technicien d'assainissement non collectif",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Conception et entretien de fosses septiques étanches et filtres à sable."
+  },
+  {
+    "id": 143,
+    "metier": "Technicien d'entretien de micro-turbines hydrauliques",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Maintenance des petites centrales électriques en zone rurale."
+  },
+  {
+    "id": 144,
+    "metier": "Monteur de compteurs électriques intelligents",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Pose et paramétrage des compteurs à prépaiement."
+  },
+  {
+    "id": 145,
+    "metier": "Monteur de compteurs d'eau prépayés",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Installation et maintenance des compteurs d'eau de concession."
+  },
+  {
+    "id": 146,
+    "metier": "Technicien en protection cathodique (Pipelines)",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Lutte contre la corrosion des conduites métalliques enterrées."
+  },
+  {
+    "id": 147,
+    "metier": "Ingénieur études d'impact environnemental (EIE)",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Très Élevée",
+    "description": "Rédaction des notices et études d'impact réglementaires pour projets."
+  },
+  {
+    "id": 148,
+    "metier": "Analyste de risques industriels",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Évaluation des dangers d'explosion, d'incendie et de fuites toxiques."
+  },
+  {
+    "id": 149,
+    "metier": "Inspecteur de tuyauterie sous pression",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Contrôle non destructif (CND par ultrasons/radiographie) des soudures."
+  },
+  {
+    "id": 150,
+    "metier": "Opérateur de station de pompage d'eau",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Conduite et maintenance des pompes de refoulement d'eau brute."
+  },
+  {
+    "id": 151,
+    "metier": "Technicien en dépollution des sols",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Traitement des sites contaminés par les hydrocarbures."
+  },
+  {
+    "id": 152,
+    "metier": "Spécialiste du séchage solaire de la biomasse",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Valorisation des résidus de scierie en briquettes de chauffe."
+  },
+  {
+    "id": 153,
+    "metier": "Ingénieur réseau de gaz naturel",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Moyenne",
+    "description": "Dimensionnement des gazoducs et stations de détente."
+  },
+  {
+    "id": 154,
+    "metier": "Agent d'intervention sur fuite d'eau d'urgence",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Réparation rapide des casses sur conduites principales d'eau."
+  },
+  {
+    "id": 155,
+    "metier": "Technicien d'éclairage public solaire",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Installation et maintenance des lampadaires solaires urbains."
+  },
+  {
+    "id": 156,
+    "metier": "Opérateur de station d'épuration d'eaux usées",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Traitement biologique et physico-chimique des eaux industrielles."
+  },
+  {
+    "id": 157,
+    "metier": "Spécialiste de la valorisation des plastiques",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Broyage, extrusion et régénération des résidus plastiques."
+  },
+  {
+    "id": 158,
+    "metier": "Monteur de réseaux de fibre optique aérienne électricité",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Pose de câbles de garde à fibre optique sur pylônes HTA/HTB."
+  },
+  {
+    "id": 159,
+    "metier": "Technicien de laboratoire de carburants",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Contrôle de densité, point d'éclair et pureté de l'essence/gazole."
+  },
+  {
+    "id": 160,
+    "metier": "Conseiller en sobriété et économies d'eau",
+    "secteur": "Énergie, Mines et Environnement",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Optimisation de la consommation d'eau dans les entreprises et hôtels."
+  },
+  {
+    "id": 161,
+    "metier": "Développeur Full-Stack Web (Node.js/React/Python)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Conception d'applications web modernes pour entreprises et startups."
+  },
+  {
+    "id": 162,
+    "metier": "Développeur d'applications mobiles (Android / Flutter)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Création d'applications mobiles adaptées aux usages et réseaux locaux."
+  },
+  {
+    "id": 163,
+    "metier": "Administrateur Systèmes et Réseaux informatique",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion des serveurs, pare-feu, réseaux LAN/WAN et sauvegardes."
+  },
+  {
+    "id": 164,
+    "metier": "Spécialiste en Cybersécurité et Pentesting",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Audit de sécurité, protection contre le piratage et sécurisation des données."
+  },
+  {
+    "id": 165,
+    "metier": "Technicien d'installation de fibre optique (FTTH)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Soudure de fibre optique, tirage de câble et raccordement d'abonnés."
+  },
+  {
+    "id": 166,
+    "metier": "Technicien de maintenance informatique et smartphones",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Dépannage matériel/logiciel d'ordinateurs, téléphones et imprimantes."
+  },
+  {
+    "id": 167,
+    "metier": "Data Analyst / Analyste de données",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Traitement de données massives pour l'aide à la décision économique."
+  },
+  {
+    "id": 168,
+    "metier": "Designer UI/UX (Interface et Expérience Utilisateur)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Conception d'interfaces fluides et ergonomiques pour web et mobile."
+  },
+  {
+    "id": 169,
+    "metier": "Community Manager / Social Media Manager",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Animation des réseaux sociaux et stratégie de visibilité en ligne."
+  },
+  {
+    "id": 170,
+    "metier": "Spécialiste en Marketing Digital et SEO",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Référencement web, campagnes publicitaires Google/Facebook et e-reputation."
+  },
+  {
+    "id": 171,
+    "metier": "Technicien support informatique (Helpdesk)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Assistance téléphonique et sur site des utilisateurs de matériels IT."
+  },
+  {
+    "id": 172,
+    "metier": "Administrateur de bases de données (PostgreSQL/MySQL/Oracle)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Optimisation, modélisation et sécurisation des bases de données."
+  },
+  {
+    "id": 173,
+    "metier": "Architecte Cloud (AWS / Azure / GCP)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Migration et gestion des infrastructures virtuelles sur le nuage."
+  },
+  {
+    "id": 174,
+    "metier": "Intégrateur de progiciels ERP (Odoo, SAP)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Déploiement et personnalisation des outils de gestion intégrée d'entreprise."
+  },
+  {
+    "id": 175,
+    "metier": "Spécialiste Mobile Money et Fintech",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Intégration des API de paiement mobile et systèmes d'encaissement."
+  },
+  {
+    "id": 176,
+    "metier": "Ingénieur DevOps",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Automatisation des déploiements et intégration continue des logiciels."
+  },
+  {
+    "id": 177,
+    "metier": "Technicien d'antennes et relais télécom (GSM/5G)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Installation et maintenance des équipements radio sur pylônes."
+  },
+  {
+    "id": 178,
+    "metier": "Rédacteur web et créateur de contenus SEO",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BAC / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Rédaction d'articles optimisation web et fiches produits."
+  },
+  {
+    "id": 179,
+    "metier": "Monteur vidéo et motion designer",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Édition vidéo, habillage graphique et animations promotionnelles."
+  },
+  {
+    "id": 180,
+    "metier": "Spécialiste du e-commerce et Marketplace",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion de boutiques en ligne, logistique et service client digital."
+  },
+  {
+    "id": 181,
+    "metier": "Consultant en transformation numérique",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Accompagnement des PME dans la numérisation de leurs processus."
+  },
+  {
+    "id": 182,
+    "metier": "Ingénieur Intelligence Artificielle / Machine Learning",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Développement de modèles prédictifs et automatisation intelligente."
+  },
+  {
+    "id": 183,
+    "metier": "Administrateur de serveurs Linux / Unix",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Configuration de serveurs Web, DNS, Mail et sécurité sous Linux."
+  },
+  {
+    "id": 184,
+    "metier": "Technicien de câblage réseau informatique (VDI)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Pose de baies de brassage, prise RJ45 et certification de câbles."
+  },
+  {
+    "id": 185,
+    "metier": "Chef de projet informatique",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Pilotage du cahier des charges, du budget et de l'équipe de développement."
+  },
+  {
+    "id": 186,
+    "metier": "Concepteur / Développeur de jeux vidéo mobiles",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Création de jeux mobiles intégrant la culture et les langues locales."
+  },
+  {
+    "id": 187,
+    "metier": "Spécialiste en archivage numérique et GED",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Numérisation et classement électronique de documents administratifs."
+  },
+  {
+    "id": 188,
+    "metier": "Technicien biométrique et contrôle d'accès",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Installation de pointeuses biométriques et portiques de sécurité."
+  },
+  {
+    "id": 189,
+    "metier": "Formateur en compétences numériques de base",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Initiation à l'outil informatique et à la bureautique en zones rurales."
+  },
+  {
+    "id": 190,
+    "metier": "Analyste décisionnel (Business Intelligence)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Création de tableaux de bord Power BI / Tableau pour directeurs."
+  },
+  {
+    "id": 191,
+    "metier": "Spécialiste d'intégration API et Webhooks",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Connexion entre applications tierces et plateformes logicielles."
+  },
+  {
+    "id": 192,
+    "metier": "Scrum Master / Coach Agile",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Facilitation de la méthode Scrum au sein des équipes de dév."
+  },
+  {
+    "id": 193,
+    "metier": "Testeur de logiciels / QA Engineer",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Tests fonctionnels, automatisation de tests et remontée de bugs."
+  },
+  {
+    "id": 194,
+    "metier": "Opérateur de numérisation grand format",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Scanner de plans d'architecture, cartes topographiques et archives."
+  },
+  {
+    "id": 195,
+    "metier": "Technicien de réparation d'imprimantes industrielles",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Maintenance de copieurs de presse et traceurs grand format."
+  },
+  {
+    "id": 196,
+    "metier": "Analyste en sécurité des données personnelles",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Conformité avec les lois de protection de la vie privée."
+  },
+  {
+    "id": 197,
+    "metier": "Spécialiste Web3 / Blockchain",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Développement de contrats intelligents et traçabilité de chaîne logistique."
+  },
+  {
+    "id": 198,
+    "metier": "Administrateur de téléphonie IP (VoIP / Asterisk)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Configuration de standards téléphoniques IP et centres d'appels."
+  },
+  {
+    "id": 199,
+    "metier": "Technicien d'installation de VSAT et satellite",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Orientation de paraboles et configuration des modems satellite en zone isolée."
+  },
+  {
+    "id": 200,
+    "metier": "Webmaster / Gestionnaire de sites Internet",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Mise à jour, maintenance et sauvegarde de sites web institutionnels."
+  },
+  {
+    "id": 201,
+    "metier": "Spécialiste en cartographie SIG (ArcGIS / QGIS)",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Systèmes d'information géographique pour l'aménagement du territoire."
+  },
+  {
+    "id": 202,
+    "metier": "Concepteur d'agents virtuels et Chatbots",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Création d'assistants conversationnels pour WhatsApp et web."
+  },
+  {
+    "id": 203,
+    "metier": "Ingénieur réseaux sans fil et WIMAX/WiFi Mesh",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Déploiement de réseaux internet communautaires à haut débit."
+  },
+  {
+    "id": 204,
+    "metier": "Monteur de studios de streaming vidéo",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Configuration des caméras, micros et régies pour événements live."
+  },
+  {
+    "id": 205,
+    "metier": "Spécialiste de la billetterie électronique",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Déploiement de solutions de tickets digitaux pour transport et spectacles."
+  },
+  {
+    "id": 206,
+    "metier": "Technicien en réparation de drones civils",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Maintenance des cartes électroniques et moteurs de drones."
+  },
+  {
+    "id": 207,
+    "metier": "Pilote certifié de drone de cartographie/agricole",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Brevet",
+    "niveau_demande": "Élevée",
+    "description": "Survol des parcelles agricoles et chantiers pour prise de vue aérienne."
+  },
+  {
+    "id": 208,
+    "metier": "Prompt Engineer / Spécialiste usages IA",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Optimisation de l'intégration de l'IA générative dans les processus d'affaires."
+  },
+  {
+    "id": 209,
+    "metier": "Auditeur de code logiciel",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Revue de la qualité, propreté et sécurité des architectures de code."
+  },
+  {
+    "id": 210,
+    "metier": "Responsable de centre d'appels / Helpdesk Manager",
+    "secteur": "Technologies et Numérique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Management de téléconseillers et suivi de la satisfaction client."
+  },
+  {
+    "id": 211,
+    "metier": "Infirmier Diplômé d'État (IDE)",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BAC + 3 (IDE)",
+    "niveau_demande": "Très Élevée",
+    "description": "Soins infirmiers, administration de traitements et suivi des patients en milieu hospitalier."
+  },
+  {
+    "id": 212,
+    "metier": "Sage-femme / Maïeuticien d'État",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BAC + 3",
+    "niveau_demande": "Très Élevée",
+    "description": "Suivi des grossesses, accouchements et consultations post-natales."
+  },
+  {
+    "id": 213,
+    "metier": "Technicien supérieur de laboratoire d'analyses médicales",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Réalisation des bilans sanguins, parasitologiques et sérologiques."
+  },
+  {
+    "id": 214,
+    "metier": "Médecin généraliste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat en Médecine",
+    "niveau_demande": "Très Élevée",
+    "description": "Diagnostic, soins primaires et orientation des malades dans les structures de santé."
+  },
+  {
+    "id": 215,
+    "metier": "Pharmacien de dispensaire / officine",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat en Pharmacie",
+    "niveau_demande": "Très Élevée",
+    "description": "Délivrance contrôlée des médicaments, conseil et gestion des stocks d'officine."
+  },
+  {
+    "id": 216,
+    "metier": "Agent de santé communautaire",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "CQP / Formation courte",
+    "niveau_demande": "Très Élevée",
+    "description": "Sensibilisation, prévention des épidémies et premiers soins en milieu rural."
+  },
+  {
+    "id": 217,
+    "metier": "Kinésithérapeute / Masso-kinésithérapeute",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Rééducation fonctionnelle, traumatologie et kinésithérapie respiratoire."
+  },
+  {
+    "id": 218,
+    "metier": "Technicien supérieur en imagerie médicale (Radiologie)",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Réalisation d'radiographies, échographies et scanners."
+  },
+  {
+    "id": 219,
+    "metier": "Technicien de maintenance biomédicale",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Installation, étalonnage et réparation des équipements médicaux et couveuses."
+  },
+  {
+    "id": 220,
+    "metier": "Infirmier anesthésiste qualifié",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence / Spécialisation",
+    "niveau_demande": "Très Élevée",
+    "description": "Assistance au médecin anesthésiste en bloc opératoire et réanimation."
+  },
+  {
+    "id": 221,
+    "metier": "Aide-soignant(e) généraliste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "CQP / Brevet",
+    "niveau_demande": "Très Élevée",
+    "description": "Hygiène, confort du malade et soutien aux infirmiers."
+  },
+  {
+    "id": 222,
+    "metier": "Chirurgien dentiste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat en Dentaire",
+    "niveau_demande": "Très Élevée",
+    "description": "Soins bucco-dentaires, prothèses et chirurgies orales."
+  },
+  {
+    "id": 223,
+    "metier": "Médecin pédiatre",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat + Spécialité",
+    "niveau_demande": "Très Élevée",
+    "description": "Prise en charge médicale des nourrissons, enfants et adolescents."
+  },
+  {
+    "id": 224,
+    "metier": "Médecin gynécologue-obstétricien",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat + Spécialité",
+    "niveau_demande": "Très Élevée",
+    "description": "Santé de la femme, suvi des grossesses à risque et interventions chirurgicales."
+  },
+  {
+    "id": 225,
+    "metier": "Optométriste / Opticien lunetier",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Examen de la vue, taillage et montage de verres correcteurs."
+  },
+  {
+    "id": 226,
+    "metier": "Technicien en hygiène hospitalière",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Désinfection, stérilisation des instruments et prévention des infections nosocomiales."
+  },
+  {
+    "id": 227,
+    "metier": "Nutritionniste / Diététicien",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Prise en charge de la malnutrition, du diabète et conseils nutritionnels."
+  },
+  {
+    "id": 228,
+    "metier": "Agent de vaccination et chaîne du froid médical",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Conservation des vaccins et campagnes d'immunisation sur le terrain."
+  },
+  {
+    "id": 229,
+    "metier": "Psychologue clinicien",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Master",
+    "niveau_demande": "Élevée",
+    "description": "Soutien psychologique, suivi des traumatismes et santé mentale."
+  },
+  {
+    "id": 230,
+    "metier": "Orthopédiste-prothésiste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence / Spécialité",
+    "niveau_demande": "Élevée",
+    "description": "Fabrication et adaptation d'orthèses, prothèses et appareils de marche."
+  },
+  {
+    "id": 231,
+    "metier": "Technicien en pharmacie (Préparateur en pharmacie)",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion des réserves de médicaments et préparation des ordonnances."
+  },
+  {
+    "id": 232,
+    "metier": "Éducateur spécialisé pour enfants en situation de handicap",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Élevée",
+    "description": "Accompagnement éducatif et social des jeunes personnes vulnérables."
+  },
+  {
+    "id": 233,
+    "metier": "Secrétaire médical(e) et d'accueil hospitalier",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Accueil des patients, gestion des rendez-vous et tenue des dossiers médicaux."
+  },
+  {
+    "id": 234,
+    "metier": "Opérateur de banque de sang (Hémovigilance)",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Collecte, qualification et distribution sécurisée des poches de sang."
+  },
+  {
+    "id": 235,
+    "metier": "Médecin cardiologue",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat + Spécialité",
+    "niveau_demande": "Très Élevée",
+    "description": "Diagnostic et traitement des maladies cardiovasculaires et hypertension."
+  },
+  {
+    "id": 236,
+    "metier": "Médecin ophtalmologue",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat + Spécialité",
+    "niveau_demande": "Très Élevée",
+    "description": "Traitement des pathologies oculaires, cataracte et glaucome."
+  },
+  {
+    "id": 237,
+    "metier": "Ergothérapeute",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Réadaptation des personnes handicapées à l'autonomie quotidienne."
+  },
+  {
+    "id": 238,
+    "metier": "Technicien en prothèse dentaire",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Fabrication en laboratoire de couronnes, bridges et dentiers."
+  },
+  {
+    "id": 239,
+    "metier": "Infirmier de santé au travail",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Élevée",
+    "description": "Prévention des risques professionnels et visites médicales en entreprise."
+  },
+  {
+    "id": 240,
+    "metier": "Ambulancier / Secouriste de transport médicalisé",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "CQP / Permis ambulance",
+    "niveau_demande": "Très Élevée",
+    "description": "Transport d'urgence et brancardage des blessés."
+  },
+  {
+    "id": 241,
+    "metier": "Médecin biologiste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat",
+    "niveau_demande": "Élevée",
+    "description": "Direction de laboratoires d'analyses et interprétation des examens complexes."
+  },
+  {
+    "id": 242,
+    "metier": "Epidémiologiste de santé publique",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Master / Doctorat",
+    "niveau_demande": "Élevée",
+    "description": "Surveillance des maladies transmissibles (Paludisme, Choléra, VIH, TB)."
+  },
+  {
+    "id": 243,
+    "metier": "Médecin urgentiste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat",
+    "niveau_demande": "Très Élevée",
+    "description": "Prise en charge des détresses vitales aux services d'urgence."
+  },
+  {
+    "id": 244,
+    "metier": "Technicien de dialyse",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des générateurs d'hémodialyse pour insuffisants rénaux."
+  },
+  {
+    "id": 245,
+    "metier": "Orthophoniste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Rééducation des troubles du langage, de la parole et de la voix."
+  },
+  {
+    "id": 246,
+    "metier": "Audioprothésiste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Correction des déficiences auditives et appareillage."
+  },
+  {
+    "id": 247,
+    "metier": "Conseiller en planification familiale",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Sensibilisation aux méthodes contraceptives et à la santé de la reproduction."
+  },
+  {
+    "id": 248,
+    "metier": "Technicien d'assainissement médical et élimination des DASRI",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Collecte et incinération sécurisée des déchets d'activités de soins."
+  },
+  {
+    "id": 249,
+    "metier": "Médecin pneumologue",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat + Spécialité",
+    "niveau_demande": "Élevée",
+    "description": "Traitements des infections respiratoires, de l'asthme et de la tuberculose."
+  },
+  {
+    "id": 250,
+    "metier": "Médecin dermatologue",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat + Spécialité",
+    "niveau_demande": "Élevée",
+    "description": "Diagnostic des affections de la peau et dermatoses locales."
+  },
+  {
+    "id": 251,
+    "metier": "Gestionnaire d'établissement de santé / Directeur d'hôpital",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Master",
+    "niveau_demande": "Élevée",
+    "description": "Management administratif, financier et logistique d'une clinique/hôpital."
+  },
+  {
+    "id": 252,
+    "metier": "Agent de régulation médicale (SAMU / Urgences)",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Réception des appels d'urgence et déclenchement des secours."
+  },
+  {
+    "id": 253,
+    "metier": "Infirmier en bloc opératoire (IBODE)",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence + Spécialité",
+    "niveau_demande": "Très Élevée",
+    "description": "Préparation du matériel stérile et assistance directe au chirurgien."
+  },
+  {
+    "id": 254,
+    "metier": "Médecin traumatologue / Orthopédiste",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Doctorat + Spécialité",
+    "niveau_demande": "Très Élevée",
+    "description": "Traitement des fractures, entorses et chirurgies osseuses."
+  },
+  {
+    "id": 255,
+    "metier": "Socio-estothérapeute en milieu hospitalier",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Soins corporels et bien-être pour personnes en longue maladie."
+  },
+  {
+    "id": 256,
+    "metier": "Agent de promotion de l'allaitement maternel",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Élevée",
+    "description": "Sensibilisation communautaire à la nutrition des nourrissons."
+  },
+  {
+    "id": 257,
+    "metier": "Infirmier en psychiatrie / santé mentale",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Élevée",
+    "description": "Accompagnement des personnes souffrant de troubles psychiatriques."
+  },
+  {
+    "id": 258,
+    "metier": "Praticien de pharmacopée traditionnelle améliorée (PTA)",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Valorisation scientifique et formulation de phytomédicaments locaux."
+  },
+  {
+    "id": 259,
+    "metier": "Biologiste moléculaire / Virologue",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "Master / Doctorat",
+    "niveau_demande": "Élevée",
+    "description": "Tests PCR et séquençage des agents pathogènes."
+  },
+  {
+    "id": 260,
+    "metier": "Technicien en audiométrie",
+    "secteur": "Santé et Médical",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Dépistage des pertes d'audition en milieu scolaire et professionnel."
+  },
+  {
+    "id": 261,
+    "metier": "Enseignant de mathématiques (Collège / Lycée)",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Très Élevée",
+    "description": "Enseignement des mathématiques dans les établissements secondaires."
+  },
+  {
+    "id": 262,
+    "metier": "Enseignant de sciences physiques et chimie",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Très Élevée",
+    "description": "Cours théoriques et travaux pratiques de physique-chimie."
+  },
+  {
+    "id": 263,
+    "metier": "Enseignant de Français / Lettres modernes",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Très Élevée",
+    "description": "Enseignement de la langue française et de la littérature."
+  },
+  {
+    "id": 264,
+    "metier": "Enseignant d'Anglais (Bilinguisme)",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Très Élevée",
+    "description": "Promotion de la seconde langue officielle dans les écoles."
+  },
+  {
+    "id": 265,
+    "metier": "Instituteur / Enseignant du primaire",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "CAPIEMP / BAC",
+    "niveau_demande": "Très Élevée",
+    "description": "Enseignement fondamental de la lecture, écriture et calcul aux enfants."
+  },
+  {
+    "id": 266,
+    "metier": "Formateur en maçonnerie et béton armé",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Transmission des compétences pratiques du bâtiment aux apprentis."
+  },
+  {
+    "id": 267,
+    "metier": "Formateur en électricité industrielle et bâtiment",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Formation professionnelle aux métiers de l'électricité."
+  },
+  {
+    "id": 268,
+    "metier": "Formateur en mécanique automobile et engins",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Apprentissage des techniques de diagnostic et réparation mécanique."
+  },
+  {
+    "id": 269,
+    "metier": "Formateur en couture, coupe et stylisme",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Enseignement du patronnage, de la confection et du design textile."
+  },
+  {
+    "id": 270,
+    "metier": "Formateur en soudure et construction métallique",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Initiation aux procédés de soudage et assemblage de métaux."
+  },
+  {
+    "id": 271,
+    "metier": "Enseignant d'Informatique / TIC",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Cours de programmation, bureautique et culture numérique."
+  },
+  {
+    "id": 272,
+    "metier": "Formateur en agriculture et élevage (Centre de formation)",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Formation terrain des futurs agropasteurs."
+  },
+  {
+    "id": 273,
+    "metier": "Enseignant d'Histoire et Géographie",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Élevée",
+    "description": "Transmettre la connaissance de l'histoire et du territoire."
+  },
+  {
+    "id": 274,
+    "metier": "Enseignant d'Allemand",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Élevée",
+    "description": "Enseignement de la langue allemande dans le secondaire."
+  },
+  {
+    "id": 275,
+    "metier": "Enseignant d'Espagnol",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Élevée",
+    "description": "Enseignement de la langue espagnole."
+  },
+  {
+    "id": 276,
+    "metier": "Enseignant de SVT (Sciences de la Vie et de la Terre)",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Très Élevée",
+    "description": "Enseignement de la biologie, géologie et environnement."
+  },
+  {
+    "id": 277,
+    "metier": "Conseiller d'orientation scolaire et professionnelle",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / Master (DIPCO)",
+    "niveau_demande": "Très Élevée",
+    "description": "Accompagnement des élèves dans le choix de leurs filières et métiers."
+  },
+  {
+    "id": 278,
+    "metier": "Éducateur de petite enfance (Maternelle)",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "CAPIEME / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Éveil, apprentissage social et encadrement des tout-petits."
+  },
+  {
+    "id": 279,
+    "metier": "Enseignant-Chercheur en génie informatique",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Doctorat",
+    "niveau_demande": "Élevée",
+    "description": "Cours universitaires et travaux de recherche en informatique."
+  },
+  {
+    "id": 280,
+    "metier": "Enseignant-Chercheur en agronomie",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Doctorat",
+    "niveau_demande": "Élevée",
+    "description": "Recherche appliquée à l'amélioration de la productivité agricole."
+  },
+  {
+    "id": 281,
+    "metier": "Formateur en plomberie et tuyauterie",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Encadrement des travaux pratiques de plomberie sanitaire."
+  },
+  {
+    "id": 282,
+    "metier": "Formateur en menuiserie et travail du bois",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Techniques d'ébénisterie et de charpente bois."
+  },
+  {
+    "id": 283,
+    "metier": "Directeur d'école primaire / Chef d'établissement",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence + Expérience",
+    "niveau_demande": "Élevée",
+    "description": "Gestion pédagogique et administrative d'une école."
+  },
+  {
+    "id": 284,
+    "metier": "Inspecteur pédagogique de l'enseignement secondaire",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Master / DIPES II",
+    "niveau_demande": "Élevée",
+    "description": "Contrôle de la qualité des enseignements et formation continue des profs."
+  },
+  {
+    "id": 285,
+    "metier": "Formateur en froid et climatisation",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Apprentissage des systèmes Frigorifiques."
+  },
+  {
+    "id": 286,
+    "metier": "Enseignant d'Éducation Physique et Sportive (EPS)",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "INJS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Pratique du sport, santé et valeurs du fair-play à l'école."
+  },
+  {
+    "id": 287,
+    "metier": "Enseignant de Philosophie",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / DIPES",
+    "niveau_demande": "Élevée",
+    "description": "Développement de l'esprit critique chez les élèves de terminale."
+  },
+  {
+    "id": 288,
+    "metier": "Formateur en comptabilité et gestion des PME",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Initiation aux logiciels de comptabilité et tenues des livres."
+  },
+  {
+    "id": 289,
+    "metier": "Formateur en secrétariat et bureautique",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Saisie rapide, organisation de bureau et correspondance professionnelle."
+  },
+  {
+    "id": 290,
+    "metier": "Éducateur sportif / Entraîneur de football jeunes",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / Brevet d'État",
+    "niveau_demande": "Élevée",
+    "description": "Encadrement technique des jeunes dans les académies de football."
+  },
+  {
+    "id": 291,
+    "metier": "Formateur en boulangerie et pâtisserie",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Enseignement du panification, façonnage et viennoiseries."
+  },
+  {
+    "id": 292,
+    "metier": "Formateur en hôtellerie et service de table",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Techniques d'accueil, art de la table et hébergement."
+  },
+  {
+    "id": 293,
+    "metier": "Enseignant de langues nationales et cultures locales",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Valorisation et enseignement des langues patrimoniales du Cameroun."
+  },
+  {
+    "id": 294,
+    "metier": "Formateur en maintenance de Panneaux Solaires",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Transfert de compétences sur les énergies renouvelables."
+  },
+  {
+    "id": 295,
+    "metier": "Formateur en saponification et cosmétique artisanale",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Élevée",
+    "description": "Apprentissage de la fabrication de savons doux et produits capillaires."
+  },
+  {
+    "id": 296,
+    "metier": "Enseignant de musique et arts plastiques",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Éveil artistique, chant et dessin."
+  },
+  {
+    "id": 297,
+    "metier": "Formateur en montage vidéo et infographie",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Prise en main de Photoshop, Illustrator et Premiere Pro."
+  },
+  {
+    "id": 298,
+    "metier": "Accompagnateur de VAE (Validation des Acquis de l'Expérience)",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Aide au montage des dossiers de certification professionnelle."
+  },
+  {
+    "id": 299,
+    "metier": "Formateur en conduite automobile (Moniteur d'auto-école)",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "Brevet de moniteur",
+    "niveau_demande": "Très Élevée",
+    "description": "Enseignement du code de la route et de la conduite sécurisée."
+  },
+  {
+    "id": 300,
+    "metier": "Bibliothécaire / Archiviste d'établissement scolaire",
+    "secteur": "Éducation et Formation",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Gestion du fonds documentaire et incitation à la lecture."
+  },
+  {
+    "id": 301,
+    "metier": "Chauffeur routier de grand articulé (Semi-remorque)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Permis SE / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Transport interurbain et sous-régional (Corridor Douala-N'Djamena/Bangui)."
+  },
+  {
+    "id": 302,
+    "metier": "Conducteur de chariot élévateur (Cariste)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CACES / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Chargement, déchargement et gerbage des palettes en entrepôt."
+  },
+  {
+    "id": 303,
+    "metier": "Agent de transit douanier et déclarant en douane",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Dédouanement des marchandises au port et aux frontières."
+  },
+  {
+    "id": 304,
+    "metier": "Gestionnaire d'entrepôt et de stock",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Suivi des réceptions, expéditions et inventaires physiques."
+  },
+  {
+    "id": 305,
+    "metier": "Mécanicien spécialisé poids lourds et bus",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Maintenance des moteurs diesel grand volume et systèmes de freinage pneumatique."
+  },
+  {
+    "id": 306,
+    "metier": "Électricien automobile et diagnostic électronique",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Recherche de pannes avec valise de diagnostic et réfection de faisceaux."
+  },
+  {
+    "id": 307,
+    "metier": "Chauffeur de bus de transport interurbain",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Permis D / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Conduite sécurisée de voyageurs sur les grandes lignes routières."
+  },
+  {
+    "id": 308,
+    "metier": "Agent d'escale aéroportuaire",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS / Formation IATA",
+    "niveau_demande": "Élevée",
+    "description": "Enregistrement des passagers, traitement des bagages et embarquement."
+  },
+  {
+    "id": 309,
+    "metier": "Tôlier-carrossier automobile",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Redressage de tôles chassées, débosselage et rénovation de carrosseries."
+  },
+  {
+    "id": 310,
+    "metier": "Peintre en carrosserie automobile",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Application de sous-couches et peinture au pistolet en cabine."
+  },
+  {
+    "id": 311,
+    "metier": "Logisticien d'urgence (Humanitaire / ONG)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Approvisionnement rapide en zones de crise et gestion de flotte."
+  },
+  {
+    "id": 312,
+    "metier": "Vulcain / Réparateur-pneumatique",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Montage, équilibrage, parallélisme et vulcanisation des pneus."
+  },
+  {
+    "id": 313,
+    "metier": "Gestionnaire de flotte automobile",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Suivi de la consommation de carburant, maintenance et assurances du parc."
+  },
+  {
+    "id": 314,
+    "metier": "Manutentionnaire portuaire (Docker)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Manutention manuelle et mécanique des cargaisons de navires."
+  },
+  {
+    "id": 315,
+    "metier": "Conducteur de portiqueur / Crane operator port",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CQP / Certificat",
+    "niveau_demande": "Élevée",
+    "description": "Chargement/déchargement des conteneurs sur les navires porte-conteneurs."
+  },
+  {
+    "id": 316,
+    "metier": "Chauffeur livreur urbain (Tricycle / Moto-cargo)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Permis A/B",
+    "niveau_demande": "Très Élevée",
+    "description": "Livraison du dernier kilomètre de colis et repas en ville."
+  },
+  {
+    "id": 317,
+    "metier": "Mécanicien de précision moteurs essence",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Révision complète de culasses, pistons et distribution."
+  },
+  {
+    "id": 318,
+    "metier": "Contrôleur de technique automobile (Visite technique)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS Mécanique",
+    "niveau_demande": "Élevée",
+    "description": "Inspection des organes de sécurité des véhicules routiers."
+  },
+  {
+    "id": 319,
+    "metier": "Analyste de la chaîne logistique (Supply Chain Analyst)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Optimisation des flux d'approvisionnement et réduction des coûts logistiques."
+  },
+  {
+    "id": 320,
+    "metier": "Agent d'exploitation de transport routier",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS Logistique",
+    "niveau_demande": "Élevée",
+    "description": "Planning des tournées des chauffeurs et affectation des véhicules."
+  },
+  {
+    "id": 321,
+    "metier": "Chef de quai logistique",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Organisation de la zone de tri et contrôle du chargement des camions."
+  },
+  {
+    "id": 322,
+    "metier": "Technicien de maintenance ferroviaire (Voie et matériel)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Inspection et réparation de la voie ferrée et des locomotives."
+  },
+  {
+    "id": 323,
+    "metier": "Conducteur de train de marchandises / voyageurs",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Licence / Habilitation Camrail",
+    "niveau_demande": "Moyenne",
+    "description": "Conduite des convois ferroviaires sur le réseau national."
+  },
+  {
+    "id": 324,
+    "metier": "Commissionnaire de transport international",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Organisation du transport multimodal (Maritime, Aérien, Routier)."
+  },
+  {
+    "id": 325,
+    "metier": "Mécanicien système d'injection diesel (Injectériste)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Calage et rénovation des pompes à injection et injecteurs Common Rail."
+  },
+  {
+    "id": 326,
+    "metier": "Spécialiste de l'emballage et calage export",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Conditionnement sécurisé des marchandises pour le fret maritimie."
+  },
+  {
+    "id": 327,
+    "metier": "Magasinier de pièces détachées auto",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion des références de pièces auto, vente au comptoir et réapprovisionnement."
+  },
+  {
+    "id": 328,
+    "metier": "Agent de consignation maritime",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Assistance aux navires lors de leurs escales portuaires et formalités."
+  },
+  {
+    "id": 329,
+    "metier": "Pisteur / Agent de piste aéroportuaire",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Guidage des avions au sol et placement des cales."
+  },
+  {
+    "id": 330,
+    "metier": "Conducteur de balayeuse et engins de nettoiement urbain",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / Permis C",
+    "niveau_demande": "Élevée",
+    "description": "Nettoyage des voies publiques et balayage des grandes artères."
+  },
+  {
+    "id": 331,
+    "metier": "Chauffeur VIP et de grande remise",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Permis B + CQP",
+    "niveau_demande": "Élevée",
+    "description": "Conduite courtoise et sécurisée de personnalités et cadres d'entreprise."
+  },
+  {
+    "id": 332,
+    "metier": "Mécanicien motocycles et tricycles",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Apprentissage / CAP",
+    "niveau_demande": "Très Élevée",
+    "description": "Entretien et réparation des deux-roues et engins à trois roues."
+  },
+  {
+    "id": 333,
+    "metier": "Planificateur de livraisons e-commerce",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS Logistique",
+    "niveau_demande": "Élevée",
+    "description": "Attribution dynamique des courses aux livreurs selon la géolocalisation."
+  },
+  {
+    "id": 334,
+    "metier": "Agent de sûreté aéroportuaire (Filtrage bagages)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CQP Sûreté",
+    "niveau_demande": "Élevée",
+    "description": "Contrôle des passagers et radioscopie des bagages à main."
+  },
+  {
+    "id": 335,
+    "metier": "Technicien de chronotachygraphes et limiteurs de vitesse",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS Mécanique",
+    "niveau_demande": "Élevée",
+    "description": "Installation et étalonnage des enregistreurs de vitesse sur camions."
+  },
+  {
+    "id": 336,
+    "metier": "Spécialiste du transport de matières dangereuses (TMD)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Certificat TMD / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Conformité du transport d'hydrocarbures et produits chimiques."
+  },
+  {
+    "id": 337,
+    "metier": "Agent de douane prive / Enquêteur douanier",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Vérification de la valeur en douane et nomenclature tarifaire."
+  },
+  {
+    "id": 338,
+    "metier": "Monteur de pneumatiques industriels et génie civil",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Changement de pneus sur engins de carrière et gros camions."
+  },
+  {
+    "id": 339,
+    "metier": "Laveur professionnel de véhicules / Detailer",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Très Élevée",
+    "description": "Lavage haute pression, nettoyage de sièges et lustrage carrosserie."
+  },
+  {
+    "id": 340,
+    "metier": "Gestionnaire des retours logistiques (Reverse Logistics)",
+    "secteur": "Transport et Logistique",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Prise en charge des colis retournés et remises en stock."
+  },
+  {
+    "id": 341,
+    "metier": "Commercial de terrain / Agent prospecteur",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Prospection directe, vente B2B et B2C et développement du portefeuille client."
+  },
+  {
+    "id": 342,
+    "metier": "Gérant de boutique / Responsable de point de vente",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion quotidienne d'un magasin, animation des équipes et chiffre d'affaires."
+  },
+  {
+    "id": 343,
+    "metier": "Vendeur en comptoir / Conseiller de vente",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Accueil, conseil client et encaissement en surface de vente."
+  },
+  {
+    "id": 344,
+    "metier": "Merchandiser / Visuel Merchandiser",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Mise en valeur des produits en rayon pour maximiser les ventes."
+  },
+  {
+    "id": 345,
+    "metier": "Chef de secteur grande distribution",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Négociation d'emplacements et présence des produits dans supermarchés."
+  },
+  {
+    "id": 346,
+    "metier": "Responsable des achats et approvisionnements",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Sourcing fournisseurs, négociation des prix et gestion des contrats."
+  },
+  {
+    "id": 347,
+    "metier": "Agent de promotion des ventes (Animatrice en magasin)",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC",
+    "niveau_demande": "Très Élevée",
+    "description": "Démonstration de produits, dégustations et stimulation des achats impulsifs."
+  },
+  {
+    "id": 348,
+    "metier": "Caissier / Caissière de supermarché",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Enregistrement des articles, encaissement et clôture de caisse."
+  },
+  {
+    "id": 349,
+    "metier": "Responsable relation client / Customer Success",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Traitement des réclamations, fidélisation et suivi de la satisfaction."
+  },
+  {
+    "id": 350,
+    "metier": "Télévendeur / Agent de téléprospection",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Démarchage téléphonique et prise de rendez-vous qualifiés."
+  },
+  {
+    "id": 351,
+    "metier": "Courtier en marchandise et matières premières",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Mise en relation d'acheteurs et vendeurs de cacao, café, bois."
+  },
+  {
+    "id": 352,
+    "metier": "Gestionnaire de caisses enregistreuses et POS",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Paramétrage des terminaux de paiement et balances connectées."
+  },
+  {
+    "id": 353,
+    "metier": "Inspecteur commercial réseau de distribution",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Contrôle de la conformité des points de vente franchisés."
+  },
+  {
+    "id": 354,
+    "metier": "Chef de produit commercial (Product Manager)",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Master",
+    "niveau_demande": "Élevée",
+    "description": "Définition de la stratégie de prix, packaging et promotion d'une gamme."
+  },
+  {
+    "id": 355,
+    "metier": "Agent commercial indépendant",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Autodidacte / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Vente à la commission de produits d'assurances, immobilier ou grande consommation."
+  },
+  {
+    "id": 356,
+    "metier": "Représentant médical / Délégué médical",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS / Licence Santé",
+    "niveau_demande": "Très Élevée",
+    "description": "Présentation des médicaments et prescriptions auprès des médecins et pharmacies."
+  },
+  {
+    "id": 357,
+    "metier": "Spécialiste de la vente en gros de matériel électrique",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS Technique",
+    "niveau_demande": "Élevée",
+    "description": "Conseil technique et fourniture de matériel aux électriciens et chantiers."
+  },
+  {
+    "id": 358,
+    "metier": "Vendeur de pièces de rechange et quincaillerie",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Conseil et vente de matériel de bricolage, outillage et plomberie."
+  },
+  {
+    "id": 359,
+    "metier": "Ajusteur-vendeur de lunettes",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Vente et adaptation des montures optiques en boutique."
+  },
+  {
+    "id": 360,
+    "metier": "Acheteur international / Sourcing Chine-Dubai",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Négociation et importation de produits de consommation courante."
+  },
+  {
+    "id": 361,
+    "metier": "Gestionnaire de rayon frais (Boucherie/Charcuterie/Boulangerie)",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Commande et présentation des produits périssables en supermarché."
+  },
+  {
+    "id": 362,
+    "metier": "Conseiller en vente de véhicules d'occasion/neufs",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Négociation, essais routiers et montage des dossiers de financement auto."
+  },
+  {
+    "id": 363,
+    "metier": "Promoteur des ventes d'équipements solaires",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Vente de kits solaires domestiques en milieu périurbain et rural."
+  },
+  {
+    "id": 364,
+    "metier": "Prospection terrain de solutions Microfinance",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Ouverture de comptes et collecte d'épargne sur les marchés."
+  },
+  {
+    "id": 365,
+    "metier": "Coordonnateur de ventes e-commerce WhatsApp",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Prise de commande sur WhatsApp Business et suivi des livraisons."
+  },
+  {
+    "id": 366,
+    "metier": "Responsable de magasin d'habillement et mode",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des collections, stocks et conseil en relooking."
+  },
+  {
+    "id": 367,
+    "metier": "Étalagiste / Concepteur de vitrines",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Habillage et mise en scène esthétique des vitrines de magasins."
+  },
+  {
+    "id": 368,
+    "metier": "Gestionnaire des réclamations et retour client",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des litiges commerciaux et service après-vente."
+  },
+  {
+    "id": 369,
+    "metier": "Responsable trade marketing",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Master",
+    "niveau_demande": "Élevée",
+    "description": "Conception des opérations promotionnelles conjointes avec les distributeurs."
+  },
+  {
+    "id": 370,
+    "metier": "Superviseur d'équipes de distribution volante",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des équipes de distribution de prospectus et street marketing."
+  },
+  {
+    "id": 371,
+    "metier": "Vendeur de produits phytosanitaires et engrais",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS Agronomie",
+    "niveau_demande": "Très Élevée",
+    "description": "Conseil et vente de produits de protection des cultures."
+  },
+  {
+    "id": 372,
+    "metier": "Commercial grands comptes (Key Account Manager)",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "Master",
+    "niveau_demande": "Élevée",
+    "description": "Négociation des contrats avec les entreprises et institutions."
+  },
+  {
+    "id": 373,
+    "metier": "Responsable d'espace de vente de téléphonie",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Vente de smartphones, SIMs et forfaits mobiles."
+  },
+  {
+    "id": 374,
+    "metier": "Vendeur ambulant structuré / Agent d'embouteilleur",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC",
+    "niveau_demande": "Très Élevée",
+    "description": "Distribution d'eau minérale et boissons fraîches dans les carrefours."
+  },
+  {
+    "id": 375,
+    "metier": "Évaluateur de satisfaction client (Client mystère)",
+    "secteur": "Commerce et Distribution",
+    "niveau_qualification": "BAC + 2",
+    "niveau_demande": "Moyenne",
+    "description": "Audits anonymes sur la qualité de service en boutique."
+  },
+  {
+    "id": 376,
+    "metier": "Frigoriste / Technicien de froid ménager et commercial",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Dépannage et recharge en gaz des réfrigérateurs et congélateurs."
+  },
+  {
+    "id": 377,
+    "metier": "Électrotechnicien de bobinage moteurs",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Rebobinage manuel et automatisé de moteurs électriques et générateurs."
+  },
+  {
+    "id": 378,
+    "metier": "Menuisier ébéniste (Meubles sur mesure)",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / Apprentissage",
+    "niveau_demande": "Très Élevée",
+    "description": "Fabrication de salons, lits, tables et salons de bois précieux (Iroko, Bubinga)."
+  },
+  {
+    "id": 379,
+    "metier": "Couturier(e) / Styliste modéliste",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Création de tenues traditionnelles, tenues de ville et uniformes."
+  },
+  {
+    "id": 380,
+    "metier": "Reparateur spécialisé de téléphones portables et cartes mères",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP / Autodidacte",
+    "niveau_demande": "Très Élevée",
+    "description": "Micro-soudure, changement d'écrans et déblocage logiciel."
+  },
+  {
+    "id": 381,
+    "metier": "Mécanicien groupe électrogène domestique et industriel",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Entretien des moteurs diesel/essence de secours."
+  },
+  {
+    "id": 382,
+    "metier": "Serrurier dépannage et reproduction de clés",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage / CAP",
+    "niveau_demande": "Très Élevée",
+    "description": "Ouverture de portes coincées, taillage de clés simples et télécommandes."
+  },
+  {
+    "id": 383,
+    "metier": "Cordonnier bottier et réparateur de cuir",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Réparation de chaussures, maroquinerie, sacs et confection de sandales."
+  },
+  {
+    "id": 384,
+    "metier": "Tapissier garnisseur de meubles et sièges",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Habillage et rénovation de fauteuils, canapés et sièges auto en cuir/tissu."
+  },
+  {
+    "id": 385,
+    "metier": "Affûteur d'outils et lames industrielles",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage / CAP",
+    "niveau_demande": "Moyenne",
+    "description": "Affûtage de scies de scierie, meules et lames de découpe."
+  },
+  {
+    "id": 386,
+    "metier": "Horloger / Réparateur de montres et bijoux",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Moyenne",
+    "description": "Changement de piles, mécanismes et bracelets de montres."
+  },
+  {
+    "id": 387,
+    "metier": "Constructeur de pirogues et embarcations en bois/résine",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Moyenne",
+    "description": "Fabrication artisanale de pirogues de pêche et transport."
+  },
+  {
+    "id": 388,
+    "metier": "Sculpteur sur bois et artisan d'art local",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Confection de masques, statuettes et objets de décoration pour l'artisanat."
+  },
+  {
+    "id": 389,
+    "metier": "Vannier / Tisseur de rotin et bambou",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Fabrication de paniers, salons en rotin et objets tressés."
+  },
+  {
+    "id": 390,
+    "metier": "Potière / Céramiste d'art et utilitaire",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Modelage et cuisson de poteries en argile, jarres et vases."
+  },
+  {
+    "id": 391,
+    "metier": "Chaudronnier / Façonneur de cuves métalliques",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Fabrication de citernes d'eau, alambics et réservoirs métalliques."
+  },
+  {
+    "id": 392,
+    "metier": "Technicien d'entretien d'ascenseurs et monte-charges",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "BTS Électrotechnique",
+    "niveau_demande": "Élevée",
+    "description": "Maintenance préventive et curative des appareils d'élévation."
+  },
+  {
+    "id": 393,
+    "metier": "Installateur de serrures magnétiques et interphones",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Équipement des portails et immeubles en contrôle d'accès."
+  },
+  {
+    "id": 394,
+    "metier": "Réparateur d'appareils électroménagers (Lave-linge, Micro-ondes)",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Diagnostic et réparation d'équipements de maison."
+  },
+  {
+    "id": 395,
+    "metier": "Bobineur d'alternateurs de véhicules",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage / CAP",
+    "niveau_demande": "Élevée",
+    "description": "Rénovation des alternateurs et démarreurs auto."
+  },
+  {
+    "id": 396,
+    "metier": "Fabricant d'ustensiles en aluminium moulé (Marmites locales)",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Très Élevée",
+    "description": "Fonte d'aluminium de récupération et moulage de marmites solides."
+  },
+  {
+    "id": 397,
+    "metier": "Technicien de maintenance de matériel de boulangerie",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Dépannage de fours rotatifs, pétrins et façonneuses."
+  },
+  {
+    "id": 398,
+    "metier": "Artisan maroquinier (Sacs, Ceintures)",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Élevée",
+    "description": "Découpe et couture manuelle du cuir local."
+  },
+  {
+    "id": 399,
+    "metier": "Vitrier miroitier d'art (Vitaux, Miroirs gravés)",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Gravure sur verre et conception de miroirs décoratifs."
+  },
+  {
+    "id": 400,
+    "metier": "Repasseur professionnel / Pressing traditionnel",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Très Élevée",
+    "description": "Lavage, détachage et repassage soigné des vêtements."
+  },
+  {
+    "id": 401,
+    "metier": "Installateur de bâches et store banne",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Confection de bâches de camions et stores de protection solaire."
+  },
+  {
+    "id": 402,
+    "metier": "Nettoyeur de réservoirs et citernes d'eau",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Lavage haute pression et désinfection des réserves d'eau d'immeubles."
+  },
+  {
+    "id": 403,
+    "metier": "Technicien de maintenance d'onduleurs de puissance",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "BTS Électronique",
+    "niveau_demande": "Très Élevée",
+    "description": "Changement de cartes de puissance et batteries d'UPS de datacenters."
+  },
+  {
+    "id": 404,
+    "metier": "Contrôleur de balance et instruments de pesage",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "BTS Métrologie",
+    "niveau_demande": "Moyenne",
+    "description": "Étalonnage officiel des bascules de marchés et ponts-bascules."
+  },
+  {
+    "id": 405,
+    "metier": "Mécanicien de tondeuses et motoculteurs",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP",
+    "niveau_demande": "Élevée",
+    "description": "Entretien du matériel d'espaces verts et petits moteurs thermiques."
+  },
+  {
+    "id": 406,
+    "metier": "Installateur d'enseignes lumineuses et néons",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Fabrication du caisson, câblage LED et pose en hauteur."
+  },
+  {
+    "id": 407,
+    "metier": "Poseur de films solaires / Vitres teintées auto et bâtiment",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP / Apprentissage",
+    "niveau_demande": "Très Élevée",
+    "description": "Pose sans bulles de films anti-UV et anti-regard."
+  },
+  {
+    "id": 408,
+    "metier": "Restaurateur de meubles anciens en bois",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage",
+    "niveau_demande": "Moyenne",
+    "description": "Décape, ponçage et vernissage à la main de meubles d'époque."
+  },
+  {
+    "id": 409,
+    "metier": "Coiffeur masculin / Barbier professionnel",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Coupes de cheveux hommes, contours précis et soin de la barbe."
+  },
+  {
+    "id": 410,
+    "metier": "Coiffeuse féminine / Spécialiste des tresses et perruques",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Tressage, confection de perruques lace wig et soins capillaires."
+  },
+  {
+    "id": 411,
+    "metier": "Esthéticienne / Prothésiste ongulaire",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Soins du visage, manucure, pédicure et pose d'ongles en gel."
+  },
+  {
+    "id": 412,
+    "metier": "Maquilleur / Maquilleuse professionnelle (Make-up artist)",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Maquillage d'événements, mariages et plateaux télé."
+  },
+  {
+    "id": 413,
+    "metier": "Masseur / Masseuse de bien-être et spa",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Élevée",
+    "description": "Massages relaxants, suédois et soins corporels en institut."
+  },
+  {
+    "id": 414,
+    "metier": "Technicien de maintenance de pompes à essence",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "BTS Électromécanique",
+    "niveau_demande": "Élevée",
+    "description": "Réparation des distributeurs de carburant en station-service."
+  },
+  {
+    "id": 415,
+    "metier": "Constructeur de séchoirs solaires artisanaux",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Moyenne",
+    "description": "Fabrication de caissons de séchage pour cacao, piment et fruits."
+  },
+  {
+    "id": 416,
+    "metier": "Rechargeur d'extincteurs et maintenance incendie",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Vérification de pression, recharge en poudre/CO2 des extincteurs."
+  },
+  {
+    "id": 417,
+    "metier": "Monteur de tentes et structures événementielles",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Montage rapide de chapiteaux et scènes pour cérémonies."
+  },
+  {
+    "id": 418,
+    "metier": "Nettoyeur de vitres en hauteur (Cordiste)",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CQP Cordiste",
+    "niveau_demande": "Moyenne",
+    "description": "Travaux d'entretien et nettoyage sur façades d'immeubles au moyen de cordes."
+  },
+  {
+    "id": 419,
+    "metier": "Poseur de moquettes et revêtements de sol souples",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP",
+    "niveau_demande": "Moyenne",
+    "description": "Préparation des sols et pose de lino, moquette et dalles P.V.C."
+  },
+  {
+    "id": 420,
+    "metier": "Spécialiste de la gravure sur plaques professionnelles",
+    "secteur": "Artisanat et Maintenance",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Gravure laser ou mécanique sur laiton, plexiglas et aluminium."
+  },
+  {
+    "id": 421,
+    "metier": "Agent de collecte / Tontinier de microfinance",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Collecte journalière de l'épargne auprès des commerçants du secteur informel."
+  },
+  {
+    "id": 422,
+    "metier": "Comptable d'entreprise",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence (CCA)",
+    "niveau_demande": "Très Élevée",
+    "description": "Tenue des journaux comptables, déclarations fiscales et états financiers."
+  },
+  {
+    "id": 423,
+    "metier": "Analyste de crédit en microfinance",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Étude de solvabilité des demandes de prêts des PME et particuliers."
+  },
+  {
+    "id": 424,
+    "metier": "Caissier de banque et établissement financier",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Opérations de dépôt, retrait, change et gestion du coffre."
+  },
+  {
+    "id": 425,
+    "metier": "Contrôleur de gestion",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Élaboration des budgets, analyse des écarts et optimisation des coûts."
+  },
+  {
+    "id": 426,
+    "metier": "Auditeur financier et comptable",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Master / DEC",
+    "niveau_demande": "Élevée",
+    "description": "Vérification de la sincérité des comptes et audit des procédures."
+  },
+  {
+    "id": 427,
+    "metier": "Chef d'agence de microfinance (EMF)",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Management d'une agence, développement du portefeuille de dépôts et crédits."
+  },
+  {
+    "id": 428,
+    "metier": "Fiscaliste / Conseiller en fiscalité d'entreprise",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master Droit/Fisc",
+    "niveau_demande": "Très Élevée",
+    "description": "Optimisation fiscale légale, déclarations DSF et gestion des contrôles fiscaux."
+  },
+  {
+    "id": 429,
+    "metier": "Gestionnaire de portefeuille clients banque",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion et développement d'un portefeuille de clients VIP ou PME."
+  },
+  {
+    "id": 430,
+    "metier": "Agent de recouvrement de créances",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Relance des impayés, négociations de règlements et suivi contentieux."
+  },
+  {
+    "id": 431,
+    "metier": "Gestionnaire de la paie et du personnel",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Calcul des salaires, cotisations CNPS et fiches de paie."
+  },
+  {
+    "id": 432,
+    "metier": "Analyste de risques bancaires",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Master",
+    "niveau_demande": "Élevée",
+    "description": "Évaluation des risques d'insolvabilité, de marché et opérationnels."
+  },
+  {
+    "id": 433,
+    "metier": "Responsable de la conformité (Compliance Officer)",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Master Droit/Finance",
+    "niveau_demande": "Élevée",
+    "description": "Lutte contre le blanchiment d'argent et respect des normes COBAC."
+  },
+  {
+    "id": 434,
+    "metier": "Expert-comptable diplômé (ONECCA)",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Diplôme d'Expertise Comptable",
+    "niveau_demande": "Élevée",
+    "description": "Certification des comptes annuels et conseil stratégique aux dirigeants."
+  },
+  {
+    "id": 435,
+    "metier": "Trésorier d'entreprise",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des flux de trésorerie, placements et prévisions de liquidités."
+  },
+  {
+    "id": 436,
+    "metier": "Conseiller en investissement financier",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Orientation des épargnants vers les bons placements (BVMAC, Bons du Trésor)."
+  },
+  {
+    "id": 437,
+    "metier": "Courtier en assurances",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence Pro Assurance",
+    "niveau_demande": "Élevée",
+    "description": "Conseil et souscription de contrats d'assurance auto, santé et incendie."
+  },
+  {
+    "id": 438,
+    "metier": "Rédacteur de sinistres assurance",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Instruction des dossiers de remboursement et indemnisation des dégat."
+  },
+  {
+    "id": 439,
+    "metier": "Évaluateur de risques dommages (Inspecteur assurance)",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Expertise terrain des dommages après accidents ou incendies."
+  },
+  {
+    "id": 440,
+    "metier": "Opérateur de change de devises (Bureau de change)",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Achats et ventes de devises étrangères selon les cours."
+  },
+  {
+    "id": 441,
+    "metier": "Gestionnaire de fusions-acquisitions et levée de fonds",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Master Grande École",
+    "niveau_demande": "Moyenne",
+    "description": "Accompagnement de restructurations d'entreprises et levées de capital."
+  },
+  {
+    "id": 442,
+    "metier": "Analyste financier en fonds d'investissement",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Master Finance",
+    "niveau_demande": "Moyenne",
+    "description": "Sélection de startups et PME à fort potentiel d'investissement."
+  },
+  {
+    "id": 443,
+    "metier": "Gestionnaire des opérations bancaires internationales",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Gestion des crédits documentaires et transferts SWIFT."
+  },
+  {
+    "id": 444,
+    "metier": "Auditeur interne de microfinance",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Très Élevée",
+    "description": "Contrôle permanent des agences et détection des fraudes."
+  },
+  {
+    "id": 445,
+    "metier": "Responsable du monétique et TPE bancaires",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Gestion du parc de Guichets Automatiques (GAB) et Terminaux de Paiement."
+  },
+  {
+    "id": 446,
+    "metier": "Agent d'enquêtes financières et solvabilité",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Investigation sur la crédibilité financière des emprunteurs."
+  },
+  {
+    "id": 447,
+    "metier": "Conseiller en micro-assurance agricole",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Vente de couvertures d'assurance sécheresse/inondation aux agriculteurs."
+  },
+  {
+    "id": 448,
+    "metier": "Opérateur de saisie comptable",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BAC / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Enregistrement informatique rapide des pièces justificatives et factures."
+  },
+  {
+    "id": 449,
+    "metier": "Actuaire / Spécialiste du calcul des risques",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "Master Actuariat",
+    "niveau_demande": "Moyenne",
+    "description": "Modélisation statistique pour la tarification des contrats d'assurance."
+  },
+  {
+    "id": 450,
+    "metier": "Gestionnaire des immobilisations",
+    "secteur": "Finance et Gestion",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Inventaire annuel, étiquetage et suivi de l'amortissement des biens de l'entreprise."
+  },
+  {
+    "id": 451,
+    "metier": "Technicien supérieur forestier",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Inventaire forestier, traçabilité des grumes et gestion durable des concessions."
+  },
+  {
+    "id": 452,
+    "metier": "Conservateur de parc national / Eco-garde",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "CQP / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Protection de la faune sauvage contre le braconnage et gestion des réserves."
+  },
+  {
+    "id": 453,
+    "metier": "Ingénieur du bois / Spécialiste de la 2e et 3e transformation",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Très Élevée",
+    "description": "Valorisation industrielle du bois d'œuvre (déroulage, contreplaqué, séchage)."
+  },
+  {
+    "id": 454,
+    "metier": "Affûteur de scies de scierie industrielle",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Entretien des rubans de scierie pour la découpe des grumes."
+  },
+  {
+    "id": 455,
+    "metier": "Opérateur de scie de tête en scierie",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Élevée",
+    "description": "Conduite du chariot de sciage et débitage optimal des billes de bois."
+  },
+  {
+    "id": 456,
+    "metier": "Spécialiste du recyclage et valorisation des déchets ménagers",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Tri sélectif, compostage et recyclage des plastiques/cartons."
+  },
+  {
+    "id": 457,
+    "metier": "Analyste de la qualité de l'air et nuisances",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Mesure de la pollution atmosphérique et des émissions industrielles."
+  },
+  {
+    "id": 458,
+    "metier": "Technicien en reboisement et restauration des sols",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Production de plants forestiers et campagnes de reforestation contre la désertification."
+  },
+  {
+    "id": 459,
+    "metier": "Ingénieur écologue / Biodiversité",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Études de la faune et de la flore pour projets d'aménagement."
+  },
+  {
+    "id": 460,
+    "metier": "Gestionnaire de déchetterie et centre de tri",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Supervision de la réception et du compactage des matériaux recyclables."
+  },
+  {
+    "id": 461,
+    "metier": "Botaniste / Taxonomiste végétal",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Moyenne",
+    "description": "Identification des espèces végétales et préservation des essences menacées."
+  },
+  {
+    "id": 462,
+    "metier": "Technicien en assainissement liquide et vidange hygiénique",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Exploitation de camions hydrocureurs et dépotage en station de traitement."
+  },
+  {
+    "id": 463,
+    "metier": "Auditeur en certification forestière (FSC / PEFC)",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Master / Ingénieur",
+    "niveau_demande": "Élevée",
+    "description": "Vérification du respect des critères de gestion forestière responsable."
+  },
+  {
+    "id": 464,
+    "metier": "Consultant en marché du carbone et crédits carbone",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Master",
+    "niveau_demande": "Élevée",
+    "description": "Montage de projets REDD+ et valorisation de la séquestration du carbone."
+  },
+  {
+    "id": 465,
+    "metier": "Technicien en dépollution des huiles usagées",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Collecte et régénération des huiles de vidange moteurs et transformateurs."
+  },
+  {
+    "id": 466,
+    "metier": "Spécialiste de la lutte contre l'érosion côtière/sols",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Ingénieur / Master",
+    "niveau_demande": "Élevée",
+    "description": "Pose de gabions, végétalisation et fixation des berges."
+  },
+  {
+    "id": 467,
+    "metier": "Classateur de bois débité",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Contrôle des défauts du bois et classement selon les normes d'exportation."
+  },
+  {
+    "id": 468,
+    "metier": "Conducteur de séchoir à bois industrialisé",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Programmation des cycles de séchage pour stabiliser le bois."
+  },
+  {
+    "id": 469,
+    "metier": "Guide éco-touristique en zone forestière",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Élevée",
+    "description": "Accompagnement des visiteurs à la découverte des gorilles, éléphants et forêt."
+  },
+  {
+    "id": 470,
+    "metier": "Technicien de valorisation des résidus de bois (Pellets)",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Transformation des sciures en granulés de combustible."
+  },
+  {
+    "id": 471,
+    "metier": "Contrôleur des produits forestiers non ligneux (PFNL)",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Réglementation et suivi de la récolte de Njansang, Okok, Moabi."
+  },
+  {
+    "id": 472,
+    "metier": "Taxidermiste / Conservateur de spécimens",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Naturalisation d'animaux pour les musées et études."
+  },
+  {
+    "id": 473,
+    "metier": "Technicien en cartographie forestière par satellite",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Suivi de la déforestation par imagerie satellite."
+  },
+  {
+    "id": 474,
+    "metier": "Opérateur de broyeur de déchets végétaux",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "CAP",
+    "niveau_demande": "Élevée",
+    "description": "Broyage des rémanents d'élagage pour paillage et compost."
+  },
+  {
+    "id": 475,
+    "metier": "Responsable QSE en exploitation forestière",
+    "secteur": "Environnement et Forêt",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Sécurité des bûcherons et protection de la santé sur les chantiers forestiers."
+  },
+  {
+    "id": 476,
+    "metier": "Chef cuisinier spécialisé en gastronomie locale et internationale",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Conception des menus, préparation des plats et gestion de brigade."
+  },
+  {
+    "id": 477,
+    "metier": "Gérant d'hôtel / Directeur d'hébergement",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Gestion opérationnelle, financière et commerciale d'un hôtel."
+  },
+  {
+    "id": 478,
+    "metier": "Réceptionniste d'hôtel bilingue",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Accueil des clients, réservations et gestion des départs/arrivées."
+  },
+  {
+    "id": 479,
+    "metier": "Maître d'hôtel / Chef de rang",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CAP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Supervision du service en salle et accueil VIP."
+  },
+  {
+    "id": 480,
+    "metier": "Gouvernante générale / Chef de ménage d'hôtel",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Contrôle de la propreté des chambres et gestion du linge."
+  },
+  {
+    "id": 481,
+    "metier": "Pâtissier-boulanger de restaurant / hôtel",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Confection de pains spéciaux, entremets et desserts."
+  },
+  {
+    "id": 482,
+    "metier": "Barman / Mixologiste cocktail",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Préparation de boissons fraîches, jus locaux et cocktails."
+  },
+  {
+    "id": 483,
+    "metier": "Agent de voyage et billetterie aérienne (Amadeus / Sabre)",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS Tourisme",
+    "niveau_demande": "Élevée",
+    "description": "Réservation de billets d'avion, séjours et conseils aux voyageurs."
+  },
+  {
+    "id": 484,
+    "metier": "Guide touristique national certifié",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Visite guidée des sites historiques, naturels et culturels du Cameroun."
+  },
+  {
+    "id": 485,
+    "metier": "Organisateur d'événements et mariages (Wedding Planner)",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Très Élevée",
+    "description": "Planification de A à Z de cérémonies, logistique et décoration."
+  },
+  {
+    "id": 486,
+    "metier": "Pizzaiolo / Cuisinier de restauration rapide",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Préparation rapide de pizzas, burgers, grillades et shawarma."
+  },
+  {
+    "id": 487,
+    "metier": "Grillardin spécialisé (Poisson braisé, Soya/Chawarma)",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "Apprentissage / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Maîtrise de la cuisson au feu de bois et marinades traditionnelles."
+  },
+  {
+    "id": 488,
+    "metier": "Gérant de restaurant traditionnel (Touristique)",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Mise en valeur des spécialités culinaires régionales (Ndolé, Eru, Koki)."
+  },
+  {
+    "id": 489,
+    "metier": "Groom / Bagagiste / Voiturier",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CAP",
+    "niveau_demande": "Élevée",
+    "description": "Prise en charge des bagages et stationnement des véhicules des clients."
+  },
+  {
+    "id": 490,
+    "metier": "Serveur / Serveuse de restaurant",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CAP / CQP",
+    "niveau_demande": "Très Élevée",
+    "description": "Prise de commande, service des plats et débarrassage."
+  },
+  {
+    "id": 491,
+    "metier": "Gestionnaire de complexe de loisirs / Parc d'attractions",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "Licence",
+    "niveau_demande": "Moyenne",
+    "description": "Organisation des activités récréatives et sécurité du public."
+  },
+  {
+    "id": 492,
+    "metier": "Régisseur de spectacles et festivals culturels",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS / Licence",
+    "niveau_demande": "Élevée",
+    "description": "Gestion de la sonorisation, de l'éclairage scénique et des artistes."
+  },
+  {
+    "id": 493,
+    "metier": "Décorateur événementiel et scénographe",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CQP / BTS",
+    "niveau_demande": "Très Élevée",
+    "description": "Habillage de salles de fêtes, arrangement floral et lumières."
+  },
+  {
+    "id": 494,
+    "metier": "Economat / Gestionnaire des stocks hôteliers",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS",
+    "niveau_demande": "Élevée",
+    "description": "Commandes de denrées alimentaires et boisson, contrôle du gaspillage."
+  },
+  {
+    "id": 495,
+    "metier": "Sommelier / Spécialiste des vins et spiritueux",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS / CQP",
+    "niveau_demande": "Moyenne",
+    "description": "Conseil sur les accords mets-vins et gestion de la cave."
+  },
+  {
+    "id": 496,
+    "metier": "Promoteur d'éco-lodges et tourisme vert",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "Licence / Master",
+    "niveau_demande": "Élevée",
+    "description": "Création d'hébergements éco-responsables en milieu naturel."
+  },
+  {
+    "id": 497,
+    "metier": "Plongeur / Agent de propreté en cuisine",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "Sans diplôme / CAP",
+    "niveau_demande": "Très Élevée",
+    "description": "Nettoyage de la vaisselle, des ustensiles et désinfection des cuisines."
+  },
+  {
+    "id": 498,
+    "metier": "Agent d'information touristique en office du tourisme",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS Tourisme",
+    "niveau_demande": "Moyenne",
+    "description": "Information et orientation des touristes étrangers et locaux."
+  },
+  {
+    "id": 499,
+    "metier": "Photographe professionnel d'événements et portrait",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "CQP / Autodidacte",
+    "niveau_demande": "Très Élevée",
+    "description": "Prise de vue haute définition, retouche photo et albums mariages."
+  },
+  {
+    "id": 500,
+    "metier": "Ingénieur du son pour studio et live",
+    "secteur": "Hôtellerie, Restauration et Tourisme",
+    "niveau_qualification": "BTS Audio",
+    "niveau_demande": "Élevée",
+    "description": "Prise de son, mixage et mastering pour musique et événements."
+  }
+]

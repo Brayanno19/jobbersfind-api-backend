@@ -9,56 +9,98 @@ export class SearchService {
   constructor(private readonly prisma: PrismaService) {}
 
   async searchArtisans(dto: SearchQueryDto) {
+    // 1. Extraction et NLP
     const { query, latitude, longitude, radius = 10 } = dto;
-    const tokens = extractTokens(query || "");
-
-    // 1. NLP : Trouver les domaines correspondants aux mots-clés dans la DB
-    const matchedDomains = await this.prisma.searchKeyword.findMany({
-      where: {
-        word: { in: tokens }
-      },
-      select: { domainId: true, weight: true }
-    });
-
-    const domainIds = [...new Set(matchedDomains.map(d => d.domainId))];
-
-    const hasLocation = latitude != null && longitude != null;
+    const tokens = extractTokens(query || "").filter(t => t.length > 2); // Ignorer les mots trop courts
     const hasQuery = tokens.length > 0;
+    const hasLocation = latitude != null && longitude != null;
 
-    let whereClause = Prisma.sql`WHERE a."isVerified" = true AND a."isActive" = true`;
-    
-    // Si pas de requête textuelle, on limite strictement au rayon pour ne pas renvoyer toute la base de données
-    if (!hasQuery && hasLocation) {
-       whereClause = Prisma.sql`${whereClause} AND a.latitude IS NOT NULL AND a.longitude IS NOT NULL AND ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( a.latitude ) ) * cos( radians( a.longitude ) - radians(${longitude}) ) + sin( radians(${latitude}) ) * sin( radians( a.latitude ) ) ) ) <= ${radius}`;
+    let domainIds: string[] = [];
+    if (hasQuery) {
+      const matchedDomains = await this.prisma.searchKeyword.findMany({
+        where: { word: { in: tokens } },
+        select: { domainId: true }
+      });
+      domainIds = [...new Set(matchedDomains.map(d => d.domainId))];
     }
 
-    const querySql = hasLocation 
-      ? Prisma.sql`
-          SELECT 
-            a.id, a."firstName", a."lastName", a."companyName", a."averageRating", a."credibilityScore",
-            a.latitude, a.longitude, a.city, a.neighborhood, a."avatarUrl", a."phoneNumber",
-            ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( a.latitude ) ) 
-            * cos( radians( a.longitude ) - radians(${longitude}) ) 
-            + sin( radians(${latitude}) ) * sin( radians( a.latitude ) ) ) ) AS distance
-          FROM "ArtisanUser" a
-          ${whereClause}
-        `
-      : Prisma.sql`
-          SELECT 
-            a.id, a."firstName", a."lastName", a."companyName", a."averageRating", a."credibilityScore",
-            a.latitude, a.longitude, a.city, a.neighborhood, a."avatarUrl", a."phoneNumber",
-            NULL AS distance
-          FROM "ArtisanUser" a
-          ${whereClause}
-        `;
+    // 2. Construction des fragments SQL sécurisés
+    // Fragment: Vérification si l'artisan possède l'un des métiers identifiés
+    const domainCheckSql = domainIds.length > 0
+      ? Prisma.sql`EXISTS (SELECT 1 FROM "_ArtisanUserToJobDomain" jd WHERE jd."A" = a.id AND jd."B" IN (${Prisma.join(domainIds)}))`
+      : Prisma.sql`false`;
 
+    // Fragment: Vérification de correspondance de nom
+    let nameCheckSql = Prisma.sql`false`;
+    if (hasQuery) {
+      const nameConditions = tokens.map(t => 
+        Prisma.sql`(a."firstName" ILIKE ${'%' + t + '%'} OR a."lastName" ILIKE ${'%' + t + '%'} OR a."companyName" ILIKE ${'%' + t + '%'})`
+      );
+      nameCheckSql = Prisma.sql`(${Prisma.join(nameConditions, ' OR ')})`;
+    }
+
+    // Fragment: Calcul de la distance géospatiale (Haversine)
+    const distanceSql = hasLocation
+      ? Prisma.sql`( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( a.latitude ) ) * cos( radians( a.longitude ) - radians(${longitude}) ) + sin( radians(${latitude}) ) * sin( radians( a.latitude ) ) ) )`
+      : Prisma.sql`NULL::float`;
+
+    // Fragment: WHERE de base
+    let whereClause = Prisma.sql`WHERE a."isVerified" = true AND a."isActive" = true`;
+
+    // Filtrage strict par requête si présente
+    if (hasQuery) {
+      whereClause = Prisma.sql`${whereClause} AND (${domainCheckSql} OR ${nameCheckSql})`;
+    } else if (hasLocation) {
+      // Si pas de requête, on filtre pour ne renvoyer que les personnes aux alentours (ex: 2x le rayon pour avoir de la marge)
+      whereClause = Prisma.sql`${whereClause} AND a.latitude IS NOT NULL AND a.longitude IS NOT NULL AND ${distanceSql} <= ${radius * 2}`;
+    }
+
+    // 3. Calcul des scores en SQL
+    // Score de match métier/nom (40 points max)
+    const matchScoreSql = hasQuery
+      ? Prisma.sql`(CASE WHEN ${domainCheckSql} THEN 40 WHEN ${nameCheckSql} THEN 30 ELSE 0 END)`
+      : Prisma.sql`40`;
+
+    // Score de distance (30 points max) - Bonus si dans le rayon, pénalité au delà
+    const distanceScoreSql = hasLocation
+      ? Prisma.sql`
+          (CASE 
+            WHEN ${distanceSql} IS NULL THEN 15
+            WHEN ${distanceSql} <= ${radius} THEN 30 * (1 - (${distanceSql} / ${radius}))
+            ELSE 0 
+          END)
+        `
+      : Prisma.sql`15`;
+
+    // Score de crédibilité (20 points max)
+    const credScoreSql = Prisma.sql`LEAST(20, (COALESCE(a."credibilityScore", 500) / 1000.0) * 20)`;
+
+    // Score d'activité (10 points max)
+    const activityScoreSql = Prisma.sql`10`;
+
+    // Limite stricte pour la recherche instantanée (très important pour les perfs)
+    const limit = hasQuery ? 30 : 50;
+
+    const querySql = Prisma.sql`
+      SELECT 
+        a.id, a."firstName", a."lastName", a."companyName", a."averageRating", a."credibilityScore",
+        a.latitude, a.longitude, a.city, a.neighborhood, a."avatarUrl", a."phoneNumber",
+        ${distanceSql} AS distance,
+        ROUND(CAST(${matchScoreSql} + ${distanceScoreSql} + ${credScoreSql} + ${activityScoreSql} AS numeric), 0) AS "globalScore"
+      FROM "ArtisanUser" a
+      ${whereClause}
+      ORDER BY "globalScore" DESC
+      LIMIT ${limit}
+    `;
+
+    // 4. Exécution de la requête optimisée
     const artisansRaw: any[] = await this.prisma.$queryRaw(querySql);
 
     if (!artisansRaw.length) return [];
 
     const artisanIds = artisansRaw.map(a => a.id);
 
-    // Récupérer les domaines des artisans trouvés pour le calcul métier
+    // 5. Récupération des domaines pour formater la réponse JSON attendue par l'app
     const artisansWithDomains = await this.prisma.artisanUser.findMany({
       where: { id: { in: artisanIds } },
       select: {
@@ -67,61 +109,16 @@ export class SearchService {
       }
     });
 
-    // 3. Algorithme de Classement (Score global sur 100)
-    // 40% Métier, 30% Distance, 20% Crédibilité, 10% Activité
-    let results = artisansRaw.map(artisan => {
-      let score = 0;
-
+    const results = artisansRaw.map(artisan => {
       const artisanDomains = artisansWithDomains.find(ad => ad.id === artisan.id)?.domains || [];
-      const artisanDomainIds = artisanDomains.map(d => d.id);
-      
-      const matchMetier = artisanDomainIds.some(id => domainIds.includes(id));
-      const nameMatch = hasQuery && tokens.some(t => 
-        (artisan.firstName && artisan.firstName.toLowerCase().includes(t.toLowerCase())) || 
-        (artisan.lastName && artisan.lastName.toLowerCase().includes(t.toLowerCase())) ||
-        (artisan.companyName && artisan.companyName.toLowerCase().includes(t.toLowerCase()))
-      );
-
-      // --- Filtre Strict si Requête ---
-      if (hasQuery) {
-        if (!matchMetier && !nameMatch) {
-          return null; // Ne correspond ni au métier ni au nom
-        }
-        score += 40; // Correspondance trouvée !
-      } else {
-        score += 40; // Pas de requête : score métier max pour tout le monde
-      }
-
-      // --- 30% Score Distance ---
-      const dist = artisan.distance;
-      if (dist != null) {
-        if (dist <= radius) {
-          const distanceScore = Math.max(0, 30 * (1 - (dist / radius)));
-          score += distanceScore;
-        } else {
-          score += 0; // Au delà du rayon, score de distance nul mais on le garde s'il a le métier
-        }
-      } else {
-        score += 15; // Valeur moyenne si pas de GPS
-      }
-
-      // --- 20% Score Crédibilité ---
-      const cred = artisan.credibilityScore || 500;
-      const credScore = Math.min(20, (cred / 1000) * 20);
-      score += credScore;
-
-      // --- 10% Score Activité ---
-      score += 10; 
-
       return {
         ...artisan,
+        globalScore: Number(artisan.globalScore),
         domains: artisanDomains,
-        globalScore: Math.round(score),
       };
-    }).filter(r => r !== null); // Supprimer les artisans qui ne matchent pas la requête
+    });
 
-    // Tri décroissant
-    return results.sort((a, b) => b!.globalScore - a!.globalScore);
+    return results;
   }
 
   async getArtisanProfileById(id: string) {

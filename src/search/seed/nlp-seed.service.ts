@@ -165,8 +165,10 @@ export class NlpSeedService {
 
     let count = 0;
     for (const kw of keywords) {
-      // Vérifier si le mot existe déjà pour éviter les doublons
-      const exists = await this.prisma.searchKeyword.findUnique({ where: { word: kw.word } });
+      // Vérifier si le mot existe déjà pour ce métier précis pour éviter les doublons
+      const exists = await this.prisma.searchKeyword.findFirst({ 
+        where: { word: kw.word, domainId: kw.domainId } 
+      });
       if (!exists) {
         await this.prisma.searchKeyword.create({ data: kw });
         count++;

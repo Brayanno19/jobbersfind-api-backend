@@ -42,5 +42,5 @@ COPY --from=builder /usr/src/app/dist ./dist
 EXPOSE 3000
 
 # Commande pour démarrer l'application avec application automatique des changements Prisma (car pas de dossier migrations)
-CMD ["sh", "-c", "npx prisma db push --accept-data-loss && node dist/src/main"]
+CMD ["sh", "-c", "npx prisma db push --accept-data-loss && node prisma/seed_jobs.js && node dist/src/main"]
 

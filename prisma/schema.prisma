@@ -125,7 +125,7 @@ model JobDomain {
 // ---------------------------------------------------------------------------
 model SearchKeyword {
   id       String @id @default(uuid())
-  word     String @unique // Mot ou expression, ex: "fuite", "kaba", "bendskin"
+  word     String // Retrait de @unique pour permettre le partage de mots-clés entre métiers
   weight   Int    @default(1) // Poids d'importance (ex: 5 pour un mot clé très fort)
   domainId String
 
